@@ -17,7 +17,7 @@ Xamarin.Forms is an open source user interface framework. Xamarin.Forms allows d
 
 Xamarin.Forms allows developers to create user interfaces in XAML with C# behind code. These interfaces are rendered as powerful native controls on each platform.
 
-# Git CLI tool
+# Download and installation of tools
 
 Installing JDK 
 
