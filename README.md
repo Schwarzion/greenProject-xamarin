@@ -47,5 +47,3 @@ Installation of Xamarin if already Visual Studio install
 
 4. Click Edit.
 
-
-# Clone the project
