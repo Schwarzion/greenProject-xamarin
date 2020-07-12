@@ -21,9 +21,7 @@ Xamarin.Forms allows developers to create user interfaces in XAML with C# behind
 
 Installing JDK 
 
-1. Download JDK from this "https://jdk.java.net/" and install it.
-
-(Don't forget to add the environement variable in you systeme "https://www.ibm.com/support/knowledgecenter/fr/SSFUEU_7.3.0/com.ibm.swg.ba.cognos.op_installation_guide.7.3.0.doc/t_op_ig_update_profiles.html")
+1. Download JDK 14 from this "https://www.oracle.com/java/technologies/javase-jdk14-downloads.html" and install it.
 
 
 Installing Visual Studio + Xamarin
@@ -48,11 +46,4 @@ Installation of Xamarin if already Visual Studio install
 3. Select "Mobile Development in .NET" in workload.
 
 4. Click Edit.
-
-
-# Clone the project
-
-1. Open the IDE and click on "Clone or extract code".
-
-2. Enter the repo address "https://github.com/Schwarzion/greenProject-xamarin" or if you prefered retrieve it from your github account, click in github and enter you identifier github. You will then be asked to choose among the different repo's present on your github.
 
