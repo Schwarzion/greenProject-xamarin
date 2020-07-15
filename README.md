@@ -17,7 +17,8 @@ https://docs.microsoft.com/fr-fr/xamarin/xamarin-forms/
 
 ## JDK Installation
 
-Download JDK 14 from this "https://www.oracle.com/java/technologies/javase-jdk14-downloads.html" and install it.
+Install JDK 14
+link :  "https://www.oracle.com/java/technologies/javase-jdk14-downloads.html"
 
 
 ## Visual Studio and Xamarin.Forms Packages Installation
