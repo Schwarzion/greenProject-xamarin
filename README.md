@@ -5,7 +5,7 @@
 
 - JDK 14
 
-- Visual Studio 2019 Community, Visual Studio Professional or Visual Studio Enterprise
+- Visual Studio 2019 (any licence version)
 
 # Xamarin.forms
 
@@ -15,14 +15,12 @@ Xamarin.Forms allows developers to create user interfaces in XAML with C# behind
 
 https://docs.microsoft.com/fr-fr/xamarin/xamarin-forms/
 
-# Download and installation of tools
+## JDK Installation
 
-Install JDK 14 
-
-1. Download JDK 14 from this "https://www.oracle.com/java/technologies/javase-jdk14-downloads.html" and install it.
+Download JDK 14 from this "https://www.oracle.com/java/technologies/javase-jdk14-downloads.html" and install it.
 
 
-## Install Visual Studio + Xamarin
+## Visual Studio and Xamarin.Forms Packages Installation
 
 Package needed : "Mobile Development in .NET"
 
