@@ -3,47 +3,29 @@
 
 # Requirements
 
-- JDK
+- JDK 14
 
-- Visual Studio 2019 Community, Visual Studio Professional or Visual Studio Enterprise
+- Visual Studio 2019 (any licence version)
 
 # Xamarin.forms
-
-https://docs.microsoft.com/fr-fr/xamarin/xamarin-forms/
-
-https://github.com/xamarin/Xamarin.Forms/blob/master/README.md
 
 Xamarin.Forms is an open source user interface framework. Xamarin.Forms allows developers to generate Android, iOS and Windows applications from a single shared code base.
 
 Xamarin.Forms allows developers to create user interfaces in XAML with C# behind code. These interfaces are rendered as powerful native controls on each platform.
 
-# Download and installation of tools
+https://docs.microsoft.com/fr-fr/xamarin/xamarin-forms/
 
-Installing JDK 
+# JDK Installation
 
-1. Download JDK 14 from this "https://www.oracle.com/java/technologies/javase-jdk14-downloads.html" and install it.
+Install JDK 14
 
-
-Installing Visual Studio + Xamarin
-
-1. Download Visual Studio from the Visual Studio page "https://visualstudio.microsoft.com/fr/vs/".
-
-2. Double-click on the downloaded package to start the installation.
-
-3. Select "Mobile Development in .NET" in workload.
-
-4. Click on the install button.
-
-5. When finished, click the Launch button to start Visual Studio.
+"https://www.oracle.com/java/technologies/javase-jdk14-downloads.html"
 
 
-Installation of Xamarin if already Visual Studio install
+# Visual Studio and Xamarin.Forms Packages Installation
 
-1. Start the Visual studio installer (Visual Studio Installer).
+Package needed : "Mobile Development in .NET"
 
-2. Choose your Visual studio and click Edit.
+You just need to download it from the installation page if it's the first time you are using Visual Studio, if you are not, download it from the Visual Studio Intaller.
 
-3. Select "Mobile Development in .NET" in workload.
-
-4. Click Edit.
-
+# Generate and Start the project
