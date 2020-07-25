@@ -12,3 +12,17 @@ D:\Users\Flo-PcPortable\Documents\Aston ecole\xamarinGreenUp\greenProject-xamari
 D:\Users\Flo-PcPortable\Documents\Aston ecole\xamarinGreenUp\greenProject-xamarin\GreenUp\GreenUp\obj\Debug\netstandard2.0\GreenUp.dll
 D:\Users\Flo-PcPortable\Documents\Aston ecole\xamarinGreenUp\greenProject-xamarin\GreenUp\GreenUp\obj\Debug\netstandard2.0\ref\GreenUp.dll
 D:\Users\Flo-PcPortable\Documents\Aston ecole\xamarinGreenUp\greenProject-xamarin\GreenUp\GreenUp\obj\Debug\netstandard2.0\GreenUp.pdb
+C:\Users\Mohamed\Source\Repos\Schwarzion\greenProject-xamarin\GreenUp\GreenUp\obj\Debug\netstandard2.0\GreenUp.dll
+C:\Users\Mohamed\Source\Repos\Schwarzion\greenProject-xamarin\GreenUp\GreenUp\obj\Debug\netstandard2.0\ref\GreenUp.dll
+C:\Users\Mohamed\Source\Repos\Schwarzion\greenProject-xamarin\GreenUp\GreenUp\obj\Debug\netstandard2.0\GreenUp.pdb
+C:\Users\Mohamed\source\repos\Schwarzion\greenProject-xamarin\GreenUp\GreenUp\bin\Debug\netstandard2.0\GreenUp.deps.json
+C:\Users\Mohamed\source\repos\Schwarzion\greenProject-xamarin\GreenUp\GreenUp\bin\Debug\netstandard2.0\GreenUp.dll
+C:\Users\Mohamed\source\repos\Schwarzion\greenProject-xamarin\GreenUp\GreenUp\bin\Debug\netstandard2.0\ref\GreenUp.dll
+C:\Users\Mohamed\source\repos\Schwarzion\greenProject-xamarin\GreenUp\GreenUp\bin\Debug\netstandard2.0\GreenUp.pdb
+C:\Users\Mohamed\source\repos\Schwarzion\greenProject-xamarin\GreenUp\GreenUp\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Users\Mohamed\source\repos\Schwarzion\greenProject-xamarin\GreenUp\GreenUp\obj\Debug\netstandard2.0\GreenUp.AssemblyInfoInputs.cache
+C:\Users\Mohamed\source\repos\Schwarzion\greenProject-xamarin\GreenUp\GreenUp\obj\Debug\netstandard2.0\GreenUp.AssemblyInfo.cs
+C:\Users\Mohamed\source\repos\Schwarzion\greenProject-xamarin\GreenUp\GreenUp\obj\Debug\netstandard2.0\GreenUp.csproj.CoreCompileInputs.cache
+C:\Users\Mohamed\source\repos\Schwarzion\greenProject-xamarin\GreenUp\GreenUp\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\Mohamed\Source\Repos\Schwarzion\greenProject-xamarin\GreenUp\GreenUp\obj\Debug\netstandard2.0\GreenUp.csprojAssemblyReference.cache
+C:\Users\Mohamed\Source\Repos\Schwarzion\greenProject-xamarin\GreenUp\GreenUp\obj\Debug\netstandard2.0\Views\MainPage.xaml.g.cs

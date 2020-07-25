@@ -1902,24 +1902,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Flo-PcPortable\\.nuget\\packages\\": {},
-    "D:\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Users\\Mohamed\\.nuget\\packages\\": {},
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Users\\Flo-PcPortable\\Documents\\Aston ecole\\GreenUpXamarin\\greenProject-xamarin\\GreenUp\\GreenUp.Android\\GreenUp.Android.csproj",
+      "projectUniqueName": "C:\\Users\\Mohamed\\Source\\Repos\\Schwarzion\\greenProject-xamarin\\GreenUp\\GreenUp.Android\\GreenUp.Android.csproj",
       "projectName": "GreenUp.Android",
-      "projectPath": "D:\\Users\\Flo-PcPortable\\Documents\\Aston ecole\\GreenUpXamarin\\greenProject-xamarin\\GreenUp\\GreenUp.Android\\GreenUp.Android.csproj",
-      "packagesPath": "C:\\Users\\Flo-PcPortable\\.nuget\\packages\\",
-      "outputPath": "D:\\Users\\Flo-PcPortable\\Documents\\Aston ecole\\GreenUpXamarin\\greenProject-xamarin\\GreenUp\\GreenUp.Android\\obj\\",
+      "projectPath": "C:\\Users\\Mohamed\\Source\\Repos\\Schwarzion\\greenProject-xamarin\\GreenUp\\GreenUp.Android\\GreenUp.Android.csproj",
+      "packagesPath": "C:\\Users\\Mohamed\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Mohamed\\Source\\Repos\\Schwarzion\\greenProject-xamarin\\GreenUp\\GreenUp.Android\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
-        "D:\\Microsoft\\Xamarin\\NuGet\\"
+        "C:\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\Flo-PcPortable\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Mohamed\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
@@ -1933,8 +1933,8 @@
       "frameworks": {
         "monoandroid90": {
           "projectReferences": {
-            "D:\\Users\\Flo-PcPortable\\Documents\\Aston ecole\\GreenUpXamarin\\greenProject-xamarin\\GreenUp\\GreenUp\\GreenUp.csproj": {
-              "projectPath": "D:\\Users\\Flo-PcPortable\\Documents\\Aston ecole\\GreenUpXamarin\\greenProject-xamarin\\GreenUp\\GreenUp\\GreenUp.csproj"
+            "C:\\Users\\Mohamed\\Source\\Repos\\Schwarzion\\greenProject-xamarin\\GreenUp\\GreenUp\\GreenUp.csproj": {
+              "projectPath": "C:\\Users\\Mohamed\\Source\\Repos\\Schwarzion\\greenProject-xamarin\\GreenUp\\GreenUp\\GreenUp.csproj"
             }
           }
         }

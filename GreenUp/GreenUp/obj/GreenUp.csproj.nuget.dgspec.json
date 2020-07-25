@@ -1,24 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Users\\Flo-PcPortable\\Documents\\Aston ecole\\GreenUpXamarin\\greenProject-xamarin\\GreenUp\\GreenUp\\GreenUp.csproj": {}
+    "C:\\Users\\Mohamed\\Source\\Repos\\Schwarzion\\greenProject-xamarin\\GreenUp\\GreenUp\\GreenUp.csproj": {}
   },
   "projects": {
-    "D:\\Users\\Flo-PcPortable\\Documents\\Aston ecole\\GreenUpXamarin\\greenProject-xamarin\\GreenUp\\GreenUp\\GreenUp.csproj": {
+    "C:\\Users\\Mohamed\\Source\\Repos\\Schwarzion\\greenProject-xamarin\\GreenUp\\GreenUp\\GreenUp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Users\\Flo-PcPortable\\Documents\\Aston ecole\\GreenUpXamarin\\greenProject-xamarin\\GreenUp\\GreenUp\\GreenUp.csproj",
+        "projectUniqueName": "C:\\Users\\Mohamed\\Source\\Repos\\Schwarzion\\greenProject-xamarin\\GreenUp\\GreenUp\\GreenUp.csproj",
         "projectName": "GreenUp",
-        "projectPath": "D:\\Users\\Flo-PcPortable\\Documents\\Aston ecole\\GreenUpXamarin\\greenProject-xamarin\\GreenUp\\GreenUp\\GreenUp.csproj",
-        "packagesPath": "C:\\Users\\Flo-PcPortable\\.nuget\\packages\\",
-        "outputPath": "D:\\Users\\Flo-PcPortable\\Documents\\Aston ecole\\GreenUpXamarin\\greenProject-xamarin\\GreenUp\\GreenUp\\obj\\",
+        "projectPath": "C:\\Users\\Mohamed\\Source\\Repos\\Schwarzion\\greenProject-xamarin\\GreenUp\\GreenUp\\GreenUp.csproj",
+        "packagesPath": "C:\\Test\\Packages",
+        "outputPath": "C:\\Users\\Mohamed\\Source\\Repos\\Schwarzion\\greenProject-xamarin\\GreenUp\\GreenUp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "D:\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\Flo-PcPortable\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Mohamed\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -68,7 +67,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
         }
       }
     }
