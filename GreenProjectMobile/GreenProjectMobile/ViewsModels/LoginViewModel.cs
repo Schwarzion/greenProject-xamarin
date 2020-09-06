@@ -73,7 +73,7 @@ namespace GreenProjectMobile.ViewsModels
             {
                 await SecureStorage.SetAsync("Token", response.token);
                 await Application.Current.MainPage.DisplayAlert("Connexion", "La connexion est un succès.", "Ok");
-                await Application.Current.MainPage.Navigation.PushModalAsync(new NavigationPage(new MainPage()));
+                await Application.Current.MainPage.Navigation.PushModalAsync(new NavbarDetailPage());
             }
         }
 
