@@ -25,7 +25,7 @@
                         VerticalOptions="CenterAndExpand" />
                 </StackLayout>
             </Frame>
-            <Button Command="{Binding SubmitCommand}" Text="Connexion" />
+            <Button Command="{Binding SubmitCommand}" x:Name="btnConnexion" Text="Connexion" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

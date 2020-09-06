@@ -26,6 +26,7 @@ namespace GreenProjectMobile
             string oauthToken = await SecureStorage.GetAsync("Token");
             if (String.IsNullOrEmpty(oauthToken))
             {
+                
                 await Navigation.PushModalAsync(new NavigationPage(new LoginView()));
             }
         }
