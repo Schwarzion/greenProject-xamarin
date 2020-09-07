@@ -1,16 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="GreenProjectMobile.Views.NavbarPage"
-             Title="Menu">
+<ContentPage
+    x:Class="GreenProjectMobile.Views.NavbarPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Menu">
     <ContentPage.Content>
         <StackLayout Margin="10">
-            <Label Text="GreenUp" FontSize="Medium" HorizontalTextAlignment="Center" />
+            <Label
+                FontSize="Medium"
+                HorizontalTextAlignment="Center"
+                Text="GreenUp" />
 
             <BoxView BackgroundColor="Gray" HeightRequest="1" />
 
             <Button x:Name="btnMain" Text="Main" />
-            <Button x:Name="btnLogin" Text="Login" />
             <Button x:Name="btnRegister" Text="Register" />
             <Button x:Name="btnProfile" Text="Profile" />
 
@@ -22,6 +25,7 @@
             <BoxView BackgroundColor="Gray" HeightRequest="1" />
 
             <Button x:Name="btnAbout" Text="About the application" />
+            <Button x:Name="btnLogout" Text="Logout" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

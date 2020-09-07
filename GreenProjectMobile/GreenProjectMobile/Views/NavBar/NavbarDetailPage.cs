@@ -37,11 +37,14 @@ namespace GreenProjectMobile.ViewsModels
                 case PageType.LoginView:
                     page = new LoginView();
                     break;
-/*                case PageType.ProfileView:
-                    page = new ProfileView();
-                    break;*/
+                /*                case PageType.ProfileView:
+                                    page = new ProfileView();
+                                    break;*/
+                case PageType.MainPage:
+                    page = new MainPage();
+                    break;
                 default:
-                    page = new AboutPage();
+                    page = new MainPage();
                     break;
             }
 

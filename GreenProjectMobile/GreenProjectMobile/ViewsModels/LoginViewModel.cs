@@ -67,13 +67,13 @@ namespace GreenProjectMobile.ViewsModels
                 password = password
             };
             string loginJson = JsonConvert.SerializeObject(loginItems);
-            TokenModel response = await LoginRequest(Constants.Constants.Login, loginJson);
+            TokenModel response = await LoginRequest("login", loginJson);
             Debug.WriteLine(response != null && response.token != null);
             if (response != null && response.token != null)
             {
                 await SecureStorage.SetAsync("Token", response.token);
                 await Application.Current.MainPage.DisplayAlert("Connexion", "La connexion est un succès.", "Ok");
-                await Application.Current.MainPage.Navigation.PushModalAsync(new NavigationPage(new MainPage()));
+                await Application.Current.MainPage.Navigation.PushModalAsync(new NavbarDetailPage());
             }
         }
 

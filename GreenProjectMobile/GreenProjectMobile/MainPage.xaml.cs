@@ -17,10 +17,6 @@ namespace GreenProjectMobile
             InitializeComponent();
         }
 
-        public void ShowTestView(object sender, EventArgs args)
-        {
-            Navigation.PushModalAsync(new NavigationPage(new TestView()));
-        }
         public async void Authorization()
         {
             string oauthToken = await SecureStorage.GetAsync("Token");

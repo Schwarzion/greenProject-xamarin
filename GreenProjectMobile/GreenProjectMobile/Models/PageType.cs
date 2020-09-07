@@ -7,7 +7,8 @@ namespace GreenProjectMobile.Models
     public enum PageType
     {
         LoginView,
-       // RegisterPage,
+        MainPage,
+        // RegisterPage,
         AboutPage,
         ProfileView
     }

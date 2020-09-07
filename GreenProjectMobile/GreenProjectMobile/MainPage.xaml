@@ -8,17 +8,12 @@
     mc:Ignorable="d">
 
     <StackLayout>
-        
+
         <Label
             HorizontalOptions="Center"
-            Text="Welcome to Xamarin.Forms!"
+            Text="Accueil !"
             VerticalOptions="CenterAndExpand" />
 
-        <Button
-            Clicked="ShowTestView"
-            HorizontalOptions="Center"
-            Text="Test"
-            VerticalOptions="CenterAndExpand" />
     </StackLayout>
 
 </ContentPage>
