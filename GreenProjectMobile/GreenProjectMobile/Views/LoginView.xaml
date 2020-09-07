@@ -12,20 +12,25 @@
                 <StackLayout Orientation="Vertical" Spacing="10">
                     <Entry
                         x:Name="Email"
-                        HorizontalOptions="StartAndExpand"
+                        HorizontalOptions="CenterAndExpand"
                         Placeholder="Email"
                         Text="{Binding Email}"
-                        VerticalOptions="CenterAndExpand" />
+                        VerticalOptions="CenterAndExpand"
+                        WidthRequest="300" />
                     <Entry
                         x:Name="Password"
-                        HorizontalOptions="StartAndExpand"
+                        HorizontalOptions="CenterAndExpand"
                         IsPassword="True"
                         Placeholder="Mot de passe"
                         Text="{Binding Password}"
-                        VerticalOptions="CenterAndExpand" />
+                        VerticalOptions="CenterAndExpand"
+                        WidthRequest="300" />
                 </StackLayout>
             </Frame>
-            <Button Command="{Binding SubmitCommand}" Text="Connexion" />
+            <Button
+                x:Name="btnConnexion"
+                Command="{Binding SubmitCommand}"
+                Text="Connexion" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
