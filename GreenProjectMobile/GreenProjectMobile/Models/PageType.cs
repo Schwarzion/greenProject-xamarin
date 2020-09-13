@@ -10,6 +10,7 @@ namespace GreenProjectMobile.Models
         MainPage,
         // RegisterPage,
         AboutPage,
-        ProfileView
+        ProfileView,
+        TipView
     }
 }

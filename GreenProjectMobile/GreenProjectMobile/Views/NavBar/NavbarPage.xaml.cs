@@ -22,7 +22,7 @@ namespace GreenProjectMobile.Views
             btnProfile.Clicked += (s, e) => PageSelected?.Invoke(this, PageType.ProfileView);
             btnMain.Clicked += (s, e) => PageSelected?.Invoke(this, PageType.MainPage);
             btnAbout.Clicked += (s, e) => PageSelected?.Invoke(this, PageType.AboutPage);
-
+            btnTips.Clicked += (s, e) => Navigation.PushModalAsync(new NavigationPage(new Tips()));
             btnLogout.Clicked += (s, e) =>
             {
                 SecureStorage.Remove("Token");
