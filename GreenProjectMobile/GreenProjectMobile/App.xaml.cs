@@ -1,4 +1,4 @@
-﻿using GreenProjectMobile.Views;
+﻿﻿using GreenProjectMobile.Views;
 using System;
 using Xamarin.Forms;
 using GreenProjectMobile.ViewsModels;
@@ -19,6 +19,8 @@ namespace GreenProjectMobile
             OnStart();
             
             MainPage = new NavbarDetailPage();
+
+            Current.On<Xamarin.Forms.PlatformConfiguration.Android>().UseWindowSoftInputModeAdjust(WindowSoftInputModeAdjust.Resize);
         }
 
         protected override void OnStart()

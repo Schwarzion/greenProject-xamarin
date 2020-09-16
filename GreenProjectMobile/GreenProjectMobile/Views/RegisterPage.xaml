@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="GreenProjectMobile.Views.RegisterPage">
+    <ContentPage.Content>
+        <ScrollView>
+            <ScrollView.Content>
+                <StackLayout>
+                    <Label Text="Welcome to Register Page"
+                    VerticalOptions="CenterAndExpand" 
+                    HorizontalOptions="CenterAndExpand" />
+
+                    <Entry x:Name="firstName" Placeholder="Prénom"/>
+                    <Entry x:Name="lastName" Placeholder="Nom"/>
+                    <Entry x:Name="alias" Placeholder="Pseudo"/>
+                    <Entry x:Name="email" Placeholder="Email"/>
+                    <Entry x:Name="password" Placeholder="Mot de passe"/>
+                    <Entry x:Name="address" Placeholder="Adresse"/>
+                    <Entry x:Name="city" Placeholder="Ville"/>
+                    <Entry x:Name="postalCode" Placeholder="Code postal"/>
+                    <Entry x:Name="sexe" Placeholder="Sexe"/>
+                    <Entry x:Name="phone" Placeholder="Téléphone"/>
+                    <Entry x:Name="birthday" Placeholder="Date de naissance"/>
+
+                    <Button
+                        x:Name="btnRegister"
+                        Text="S'inscrire !"
+                        />
+                </StackLayout>
+            </ScrollView.Content>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
