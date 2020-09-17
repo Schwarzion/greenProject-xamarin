@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GreenProjectMobile.ViewsModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,6 +15,9 @@ namespace GreenProjectMobile.Views
     {
         public RegisterPage()
         {
+            var registerContext = new RegisterViewModel();
+            this.BindingContext = registerContext;
+
             InitializeComponent();
         }
     }

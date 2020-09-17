@@ -13,22 +13,23 @@
                     VerticalOptions="CenterAndExpand" 
                     HorizontalOptions="CenterAndExpand" />
 
-                    <Entry x:Name="firstName" Placeholder="Prénom"/>
-                    <Entry x:Name="lastName" Placeholder="Nom"/>
-                    <Entry x:Name="alias" Placeholder="Pseudo"/>
-                    <Entry x:Name="email" Placeholder="Email"/>
-                    <Entry x:Name="password" Placeholder="Mot de passe"/>
-                    <Entry x:Name="address" Placeholder="Adresse"/>
-                    <Entry x:Name="city" Placeholder="Ville"/>
-                    <Entry x:Name="postalCode" Placeholder="Code postal"/>
-                    <Entry x:Name="sexe" Placeholder="Sexe"/>
-                    <Entry x:Name="phone" Placeholder="Téléphone"/>
-                    <Entry x:Name="birthday" Placeholder="Date de naissance"/>
+                    <Entry x:Name="firstName" Placeholder="Prénom" Text="{Binding FirstName}"/>
+                    <Entry x:Name="lastName" Placeholder="Nom" Text="{Binding LastName}"/>
+                    <Entry x:Name="alias" Placeholder="Pseudo" Text="{Binding Alias}"/>
+                    <Entry x:Name="email" Placeholder="Email" Text="{Binding Email}"/>
+                    <Entry x:Name="password" Placeholder="Mot de passe" Text="{Binding Password}"/>
+                    <Entry x:Name="address" Placeholder="Adresse" Text="{Binding Address}"/>
+                    <Entry x:Name="city" Placeholder="Ville" Text="{Binding City}"/>
+                    <Entry x:Name="postalCode" Placeholder="Code postal" Text="{Binding PostalCode}"/>
+                    <Entry x:Name="sexe" Placeholder="Sexe" Text="{Binding Sexe}"/>
+                    <Entry x:Name="phone" Placeholder="Téléphone" Text="{Binding Phone}"/>
+                    <Entry x:Name="birthday" Placeholder="Date de naissance" Text="{Binding Birthday}"/>
 
                     <Button
                         x:Name="btnRegister"
                         Text="S'inscrire !"
-                        />
+                        Command="{Binding RegisterCommand}"
+                    />
                 </StackLayout>
             </ScrollView.Content>
         </ScrollView>
