@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Android.OS;
+using GreenProjectMobile.Models;
 using GreenProjectMobile.ViewsModels;
-
+using System;
+using System.Collections.Generic;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -15,9 +13,8 @@ namespace GreenProjectMobile.Views
     {
         public Tips()
         {
+            BindingContext = new TipViewModel();
             InitializeComponent();
-            var service = new TipViewModel();
-            service.GetTips();
         }
     }
 }

@@ -1,25 +1,28 @@
 ﻿using GreenProjectMobile.Views;
 using System;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 using GreenProjectMobile.ViewsModels;
 using Xamarin.Essentials;
+using System.Net.Http;
+using System.Diagnostics;
+using System.Threading.Tasks;
 
 namespace GreenProjectMobile
 {
     public partial class App : Application
     {
+        HttpClient client;
         public App()
         {
             Authorization();
             InitializeComponent();
 
-            //MainPage = new NavigationPage(new MainPage());
             MainPage = new NavbarDetailPage();
         }
 
         protected override void OnStart()
         {
+
         }
 
         protected override void OnSleep()

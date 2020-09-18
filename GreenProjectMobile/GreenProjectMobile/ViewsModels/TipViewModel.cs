@@ -1,85 +1,90 @@
 ﻿using GreenProjectMobile.Models;
 using Newtonsoft.Json;
 using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using Xamarin.Essentials;
-using Xamarin.Forms;
 
 namespace GreenProjectMobile.ViewsModels
 {
-    class TipViewModel
+    class TipViewModel : INotifyCollectionChanged
     {
         readonly HttpClient client;
-
-        public Command SubmitCommand { get; set; }
 
         public TipViewModel()
         {
             client = new HttpClient();
-            SubmitCommand = new Command(OnSubmit);
-
+            GetTips();
         }
 
-        private void OnSubmit(object obj)
-        {
-            throw new NotImplementedException();
-        }
+        public Tip Tips { get; private set; }
 
-        public string Name
-        {
-            get
-            {
-                return Name;
-            }
-            set
-            {
-                Name = value;
-                PropertyChanged(this, new PropertyChangedEventArgs("Name"));
+        public ObservableCollection<Tip> tipList { get; private set; }
 
-            }
-        }
-
-        public Tips Tips { get; private set; }
+        public event NotifyCollectionChangedEventHandler CollectionChanged;
 
         public async void GetTips()
         {
-            Tips response = await GetTipsRequest();
-        }
-
-        public async Task<Tips>  GetTipsRequest()
-        {
-            
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", await SecureStorage.GetAsync("Token"));
             string uri = Constants.Constants.BaseUrl + "allTips";
             HttpResponseMessage response = null;
-            var tips = new TipsResult();
-            var Tips = new Tips();
+            TipsResult tips = new TipsResult();
+            
             try
             {
                 response = await client.GetAsync(uri);
-                Debug.WriteLine(response.IsSuccessStatusCode);
-                var contents = response.Content.ReadAsStringAsync().Result;
-                tips = JsonConvert.DeserializeObject<TipsResult>(contents);
-                tips.tips.ForEach(Console.WriteLine(Name));
-
-                //List<Tips> tips = JsonConvert.DeserializeObject<List<Tips>>(contents);
-                //Debug.WriteLine(Tips);
-
+                if (response != null && response.IsSuccessStatusCode == true)
+                {
+                    var contents = response.Content.ReadAsStringAsync().Result;
+                    tips = JsonConvert.DeserializeObject<TipsResult>(contents);
+                    List<Tip> list = new List<Tip>(tips.tips);
+                    tipList = new ObservableCollection<Tip>(list as List<Tip>);
+                    foreach (Tip elem in tipList)
+                    {
+                        Debug.WriteLine(elem);
+                    }
+                }
             }
             catch (Exception ex)
             {
-                Debug.WriteLine(ex);
+                Debug.WriteLine($"Exception Tips: {ex}");
             }
-            return Tips;
-        }
-        private void PropertyChanged(TipViewModel tipViewModel, PropertyChangedEventArgs propertyChangedEventArgs)
-        {
-            throw new NotImplementedException();
         }
 
+        public async Task<ObservableCollection<Tip>> GetTipsRequest()
+        {
+
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", await SecureStorage.GetAsync("Token"));
+            string uri = Constants.Constants.BaseUrl + "allTips";
+            HttpResponseMessage response = null;
+            TipsResult tips = new TipsResult();
+            List<Tip> list = new List<Tip>();
+            try
+            {
+                response = await client.GetAsync(uri);
+                if (response != null && response.IsSuccessStatusCode == true)
+                {
+                    var contents = response.Content.ReadAsStringAsync().Result;
+                    tips = JsonConvert.DeserializeObject<TipsResult>(contents);
+                    list = tips.tips;
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Exception Tips: {ex}");
+            }
+            ObservableCollection<Tip> obsList = new ObservableCollection<Tip>(list as List<Tip>);
+            foreach (Tip elem in obsList)
+            {
+                Debug.WriteLine(elem.name);
+            }
+            return obsList;
+        }
     }
 }

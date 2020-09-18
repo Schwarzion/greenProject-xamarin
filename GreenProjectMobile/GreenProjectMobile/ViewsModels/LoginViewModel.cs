@@ -23,6 +23,8 @@ namespace GreenProjectMobile.ViewsModels
         {
             client = new HttpClient();
             SubmitCommand = new Command(OnSubmit);
+            email = "test@mail.com";
+            password = "password";
         }
         public ICommand SubmitCommand { protected set; get; }
         private string email;
@@ -90,7 +92,7 @@ namespace GreenProjectMobile.ViewsModels
             }
             catch (Exception ex)
             {
-                await Application.Current.MainPage.DisplayAlert("Connexion", "La connexion à échoué. Vérifiez votre connexion.", "Ok");
+                await Application.Current.MainPage.DisplayAlert("Connexion", $"La connexion à échoué. Vérifiez votre connexion : {ex}", "Ok");
             }
 
             if (response != null && response.IsSuccessStatusCode == true)
