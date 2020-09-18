@@ -9,7 +9,7 @@
         <ScrollView>
             <ScrollView.Content>
                 <StackLayout>
-                    <Label Text="Welcome to Register Page"
+                    <Label Text="Inscription"
                     VerticalOptions="CenterAndExpand" 
                     HorizontalOptions="CenterAndExpand" />
 
@@ -17,8 +17,8 @@
                     <Entry x:Name="lastName" Placeholder="Nom" Text="{Binding LastName}"/>
                     <Entry x:Name="alias" Placeholder="Pseudo" Text="{Binding Alias}"/>
                     <Entry x:Name="email" Placeholder="Email" Text="{Binding Email}"/>
-                    <Entry x:Name="password" Placeholder="Mot de passe" Text="{Binding Password}"/>
-                    <Entry x:Name="confirmPassword" Placeholder="Confirmer mot de passe" Text="{Binding ConfirmPassword}"/>
+                    <Entry x:Name="password" IsPassword="True" Placeholder="Mot de passe" Text="{Binding Password}"/>
+                    <Entry x:Name="confirmPassword" IsPassword="True" Placeholder="Confirmer mot de passe" Text="{Binding ConfirmPassword}"/>
                     <Entry x:Name="address" Placeholder="Adresse" Text="{Binding Address}"/>
                     <Entry x:Name="city" Placeholder="Ville" Text="{Binding City}"/>
                     <Entry x:Name="postalCode" Placeholder="Code postal" Text="{Binding PostalCode}"/>

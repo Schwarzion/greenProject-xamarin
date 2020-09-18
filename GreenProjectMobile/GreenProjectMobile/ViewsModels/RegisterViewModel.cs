@@ -150,7 +150,7 @@ namespace GreenProjectMobile.ViewsModels
             if (response != null)
             {
                 await Application.Current.MainPage.DisplayAlert("Incription", "Votre compte est bien enregistré", "Ok");
-                await Application.Current.MainPage.Navigation.PushAsync(new NavigationPage(new LoginView()));
+                await Application.Current.MainPage.Navigation.PushModalAsync(new NavbarDetailPage());
             }
         }
 
