@@ -18,12 +18,13 @@
                     <Entry x:Name="alias" Placeholder="Pseudo" Text="{Binding Alias}"/>
                     <Entry x:Name="email" Placeholder="Email" Text="{Binding Email}"/>
                     <Entry x:Name="password" Placeholder="Mot de passe" Text="{Binding Password}"/>
+                    <Entry x:Name="confirmPassword" Placeholder="Confirmer mot de passe" Text="{Binding ConfirmPassword}"/>
                     <Entry x:Name="address" Placeholder="Adresse" Text="{Binding Address}"/>
                     <Entry x:Name="city" Placeholder="Ville" Text="{Binding City}"/>
                     <Entry x:Name="postalCode" Placeholder="Code postal" Text="{Binding PostalCode}"/>
                     <Entry x:Name="sexe" Placeholder="Sexe" Text="{Binding Sexe}"/>
                     <Entry x:Name="phone" Placeholder="Téléphone" Text="{Binding Phone}"/>
-                    <Entry x:Name="birthday" Placeholder="Date de naissance" Text="{Binding Birthday}"/>
+                    <DatePicker x:Name="birthday" MinimumDate="01/01/1920" MaximumDate="12/31/2120" Date="{Binding Birthday}" />
 
                     <Button
                         x:Name="btnRegister"

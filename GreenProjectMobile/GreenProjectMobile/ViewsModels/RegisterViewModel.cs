@@ -29,7 +29,7 @@ namespace GreenProjectMobile.ViewsModels
             RegisterCommand = new Command(OnRegister);
         }
 
-        public TokenModel Items { get; private set; }
+        public RegisterModel Items { get; private set; }
 
         //Propriétés de l'objet Register
         private string firstName;
@@ -65,6 +65,13 @@ namespace GreenProjectMobile.ViewsModels
         {
             get { return password; }
             set { password = value; PropertyChanged(this, new PropertyChangedEventArgs("Password")); }
+        }
+
+        private string confirmPassword;
+        public string ConfirmPassword
+        {
+            get { return confirmPassword; }
+            set { confirmPassword = value; PropertyChanged(this, new PropertyChangedEventArgs("ConfirmPassword")); }
         }
 
         private string address;
@@ -113,10 +120,10 @@ namespace GreenProjectMobile.ViewsModels
         public void OnRegister()
         {
             Debug.WriteLine("Click on btnRegister");
-            Register(FirstName, LastName, Alias, Email, Password, Address, City, PostalCode, Phone, Sexe, Birthday);
+            Register(FirstName, LastName, Alias, Email, Password, ConfirmPassword, Address, City, PostalCode, Phone, Sexe, Birthday);
         }
 
-        public async void Register(string firstName, string lastName, string alias, string email, string password, string address, string city, string postalCode, string phone, int sexe, DateTime birthday)
+        public async void Register(string firstName, string lastName, string alias, string email, string password, string confirmPassword, string address, string city, string postalCode, string phone, int sexe, DateTime birthday)
         {
 
             Debug.WriteLine("Eentrée dans méthode Register");
@@ -127,6 +134,7 @@ namespace GreenProjectMobile.ViewsModels
                 alias = alias,
                 email = email,
                 password = password,
+                confirmPassword = confirmPassword,
                 address = address,
                 city = city,
                 postalCode = postalCode,
@@ -135,17 +143,18 @@ namespace GreenProjectMobile.ViewsModels
                 birthday = birthday
             };
             string registerJson = JsonConvert.SerializeObject(registerItems);
-            TokenModel response = await RegisterRequest("register", registerJson);
+            RegisterModel response = await RegisterRequest("register", registerJson);
+
             Debug.WriteLine("Réponse de la requête", response);
 
             if (response != null)
             {
                 await Application.Current.MainPage.DisplayAlert("Incription", "Votre compte est bien enregistré", "Ok");
-                await Application.Current.MainPage.Navigation.PushAsync(new LoginView());
+                await Application.Current.MainPage.Navigation.PushAsync(new NavigationPage(new LoginView()));
             }
         }
 
-        public async Task<TokenModel> RegisterRequest(string path, string json)
+        public async Task<RegisterModel> RegisterRequest(string path, string json)
         {
             string uri = Constants.Constants.BaseUrl + path;
             HttpResponseMessage response = null;
@@ -158,17 +167,18 @@ namespace GreenProjectMobile.ViewsModels
             }
             catch (Exception ex)
             {
-                await Application.Current.MainPage.DisplayAlert("Erreur inscription", "La connexion à échoué. Vérifiez votre connexion.", "Ok");
+                await Application.Current.MainPage.DisplayAlert("Erreur connexion", "La connexion à échoué. Vérifiez votre connexion.", "Ok");
             }
 
             if (response != null && response.IsSuccessStatusCode == true)
             {
                 var result = await response.Content.ReadAsStringAsync();
-                Items = JsonConvert.DeserializeObject<TokenModel>(result);
+                Items = JsonConvert.DeserializeObject<RegisterModel>(result);
             }
             else
             {
-                await Application.Current.MainPage.DisplayAlert("Erreur inscription", "La connexion à échoué. Une erreur s'eest produite lors de l'inscription", "Ok");
+                Debug.WriteLine("réponse erreur", response);
+                await Application.Current.MainPage.DisplayAlert("Erreur inscription", "Une erreur s'est produite lors de l'inscription", "Ok");
             }
             return Items;
         }

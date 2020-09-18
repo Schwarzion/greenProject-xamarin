@@ -9,6 +9,7 @@ namespace GreenProjectMobile.Models.AuthenticationModels
         public string alias { get; set; }
         public string email { get; set; }
         public string password { get; set; }
+        public string confirmPassword { get; set; }
         public string address { get; set; }
         public string city { get; set; }
         public string postalCode { get; set; }
