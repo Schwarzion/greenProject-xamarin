@@ -13,6 +13,8 @@ using System.Diagnostics;
 using System.Windows.Input;
 using Xamarin.Essentials;
 using GreenProjectMobile.Views;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace GreenProjectMobile.ViewsModels
 {
@@ -30,6 +32,26 @@ namespace GreenProjectMobile.ViewsModels
         }
 
         public RegisterModel Items { get; private set; }
+
+
+        //Renseignement de la liste de sexes 
+        static Dictionary<string, int> sexes { get; } = new Dictionary<string, int>
+        {
+            {"Homme", 0 },
+            {"Femme", 1 },
+            {"Autre", 2 }
+        };
+
+        public List<string> Sexes { get; } = sexes.Keys.ToList();
+
+        public string SelectedSex { get; set; }
+
+        public void OnSelectedSexChanged()
+        {
+            var selectedValue = sexes[SelectedSex];
+            Debug.WriteLine(selectedValue);
+            Sexe = selectedValue;
+        }
 
         //Propriétés de l'objet Register
         private string firstName;

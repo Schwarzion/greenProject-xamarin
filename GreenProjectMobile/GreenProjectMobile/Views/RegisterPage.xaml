@@ -13,6 +13,10 @@
                     VerticalOptions="CenterAndExpand" 
                     HorizontalOptions="CenterAndExpand" />
 
+                    <Picker x:Name="sexe"
+                        Title="Choisissez votre sexe"
+                        SelectedItem="{Binding SelectedSex}"
+                        ItemsSource="{Binding Sexes}"/>
                     <Entry x:Name="firstName" Placeholder="Prénom" Text="{Binding FirstName}"/>
                     <Entry x:Name="lastName" Placeholder="Nom" Text="{Binding LastName}"/>
                     <Entry x:Name="alias" Placeholder="Pseudo" Text="{Binding Alias}"/>
@@ -22,10 +26,8 @@
                     <Entry x:Name="address" Placeholder="Adresse" Text="{Binding Address}"/>
                     <Entry x:Name="city" Placeholder="Ville" Text="{Binding City}"/>
                     <Entry x:Name="postalCode" Placeholder="Code postal" Text="{Binding PostalCode}"/>
-                    <Entry x:Name="sexe" Placeholder="Sexe" Text="{Binding Sexe}"/>
                     <Entry x:Name="phone" Placeholder="Téléphone" Text="{Binding Phone}"/>
                     <DatePicker x:Name="birthday" MinimumDate="01/01/1920" MaximumDate="12/31/2120" Date="{Binding Birthday}" />
-
                     <Button
                         x:Name="btnRegister"
                         Text="S'inscrire !"
