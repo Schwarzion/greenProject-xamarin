@@ -49,7 +49,6 @@ namespace GreenProjectMobile.ViewsModels
         public void OnSelectedSexChanged()
         {
             var selectedValue = sexes[SelectedSex];
-            Debug.WriteLine(selectedValue);
             Sexe = selectedValue;
         }
 
@@ -121,7 +120,15 @@ namespace GreenProjectMobile.ViewsModels
         public int Sexe
         {
             get { return sexe; }
-            set { sexe = value; PropertyChanged(this, new PropertyChangedEventArgs("Sexe")); }
+            set 
+            {
+                if (sexe != value)
+                {
+                    sexe = value;
+                    PropertyChanged(this, new PropertyChangedEventArgs("Sexe"));
+                    OnSelectedSexChanged();
+                }; 
+            }
         }
 
         private string phone;
@@ -142,6 +149,7 @@ namespace GreenProjectMobile.ViewsModels
         public void OnRegister()
         {
             Debug.WriteLine("Click on btnRegister");
+            OnSelectedSexChanged();
             Register(FirstName, LastName, Alias, Email, Password, ConfirmPassword, Address, City, PostalCode, Phone, Sexe, Birthday);
         }
 
@@ -197,13 +205,16 @@ namespace GreenProjectMobile.ViewsModels
                 var result = await response.Content.ReadAsStringAsync();
                 Items = JsonConvert.DeserializeObject<RegisterModel>(result);
             }
-            else
+            else if(response != null && response.IsSuccessStatusCode == false)
             {
-                Debug.WriteLine("réponse erreur", response);
-                await Application.Current.MainPage.DisplayAlert("Erreur inscription", "Une erreur s'est produite lors de l'inscription", "Ok");
+                
+                var result = await response.Content.ReadAsStringAsync();
+                RegisterResponseModel Errors = JsonConvert.DeserializeObject<RegisterResponseModel>(result);
+                Debug.WriteLine("réponse erreur", Errors);
+
+                await Application.Current.MainPage.DisplayAlert("Erreur inscription", "Erreur dans le formulaire", "Ok");
             }
             return Items;
         }
-
     }
 }

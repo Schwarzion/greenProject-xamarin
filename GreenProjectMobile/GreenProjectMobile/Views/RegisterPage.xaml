@@ -13,10 +13,12 @@
                     VerticalOptions="CenterAndExpand" 
                     HorizontalOptions="CenterAndExpand" />
 
-                    <Picker x:Name="sexe"
+                    <Picker 
+                        x:Name="sexe"
                         Title="Choisissez votre sexe"
                         SelectedItem="{Binding SelectedSex}"
-                        ItemsSource="{Binding Sexes}"/>
+                        ItemsSource="{Binding Sexes}"
+                     />
                     <Entry x:Name="firstName" Placeholder="Prénom" Text="{Binding FirstName}"/>
                     <Entry x:Name="lastName" Placeholder="Nom" Text="{Binding LastName}"/>
                     <Entry x:Name="alias" Placeholder="Pseudo" Text="{Binding Alias}"/>
