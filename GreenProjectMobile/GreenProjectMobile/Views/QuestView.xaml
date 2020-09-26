@@ -6,14 +6,17 @@
              mc:Ignorable="d"
              x:Class="GreenProjectMobile.Views.Quests">
     <ContentPage.Content>
-        <ListView x:Name="questListView" ItemsSource="{Binding questList}">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <Label VerticalOptions="Center" HorizontalOptions="Center" FontSize="20" Text="{Binding name}"/>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+        <StackLayout>
+            <Label Text="YO MEUF"/>
+            <ListView x:Name="questListView" ItemsSource="{Binding questList}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Label VerticalOptions="Center" HorizontalOptions="Center" FontSize="20" Text="{Binding name}"/>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>
