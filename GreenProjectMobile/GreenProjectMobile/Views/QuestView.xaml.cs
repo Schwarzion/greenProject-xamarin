@@ -15,9 +15,8 @@ namespace GreenProjectMobile.Views
     {
         public Quests()
         {
+            BindingContext = new QuestViewModel();
             InitializeComponent();
-            var service = new QuestViewModel();
-            service.GetQuests();
         }
     }
 }
