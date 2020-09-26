@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Java.Util.Functions;
+using System.Collections.Generic;
 
 namespace GreenProjectMobile.Models.AuthenticationModels
 {
@@ -22,5 +23,24 @@ namespace GreenProjectMobile.Models.AuthenticationModels
         public List<string> birthday { get; set; }
         public List<string> sexe { get; set; }
         public List<string> phone { get; set; }
+
+        public List<List<string>> getAllErrors()
+        {
+            List<List<string>> errorsList = new List<List<string>>();
+            errorsList.Add(firstName) ;
+            errorsList.Add(lastName);
+            errorsList.Add(alias);
+            errorsList.Add(email);
+            errorsList.Add(password);
+            errorsList.Add(confirmPassword);
+            errorsList.Add(address);
+            errorsList.Add(city);
+            errorsList.Add(postalCode);
+            errorsList.Add(birthday);
+            errorsList.Add(sexe);
+            errorsList.Add(phone);
+
+            return errorsList;
+        }
     }
 }

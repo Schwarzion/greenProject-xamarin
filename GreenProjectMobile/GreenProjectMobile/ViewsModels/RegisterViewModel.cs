@@ -1,5 +1,4 @@
 ﻿
-using GreenProjectMobile.Models;
 using GreenProjectMobile.Models.AuthenticationModels;
 using System;
 using System.Text;
@@ -8,13 +7,10 @@ using System.ComponentModel;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using Xamarin.Forms;
-
-using System.Diagnostics;
 using System.Windows.Input;
-using Xamarin.Essentials;
-using GreenProjectMobile.Views;
 using System.Collections.Generic;
 using System.Linq;
+using GreenProjectMobile.Views;
 
 namespace GreenProjectMobile.ViewsModels
 {
@@ -44,7 +40,7 @@ namespace GreenProjectMobile.ViewsModels
 
         public List<string> Sexes { get; } = sexes.Keys.ToList();
 
-        public string SelectedSex { get; set; }
+        public string SelectedSex { get; set; } = "Homme";
 
         public void OnSelectedSexChanged()
         {
@@ -148,15 +144,12 @@ namespace GreenProjectMobile.ViewsModels
         //Méthodes liées à l'inscription
         public void OnRegister()
         {
-            Debug.WriteLine("Click on btnRegister");
             OnSelectedSexChanged();
             Register(FirstName, LastName, Alias, Email, Password, ConfirmPassword, Address, City, PostalCode, Phone, Sexe, Birthday);
         }
 
         public async void Register(string firstName, string lastName, string alias, string email, string password, string confirmPassword, string address, string city, string postalCode, string phone, int sexe, DateTime birthday)
         {
-
-            Debug.WriteLine("Eentrée dans méthode Register");
             RegisterModel registerItems = new RegisterModel()
             {
                 firstName = firstName,
@@ -175,12 +168,10 @@ namespace GreenProjectMobile.ViewsModels
             string registerJson = JsonConvert.SerializeObject(registerItems);
             RegisterModel response = await RegisterRequest("register", registerJson);
 
-            Debug.WriteLine("Réponse de la requête", response);
-
             if (response != null)
             {
                 await Application.Current.MainPage.DisplayAlert("Incription", "Votre compte est bien enregistré", "Ok");
-                await Application.Current.MainPage.Navigation.PushModalAsync(new NavbarDetailPage());
+                await Application.Current.MainPage.Navigation.PushModalAsync(new LoginView());
             }
         }
 
@@ -192,12 +183,11 @@ namespace GreenProjectMobile.ViewsModels
 
             try
             {
-                Debug.WriteLine("On essaie d'envoyer la requête");
                 response = await client.PostAsync(uri, content);
             }
             catch (Exception ex)
             {
-                await Application.Current.MainPage.DisplayAlert("Erreur connexion", "La connexion à échoué. Vérifiez votre connexion.", "Ok");
+                await Application.Current.MainPage.DisplayAlert("Erreur connexion", "La connexion au serveur a échouée.", "Ok");
             }
 
             if (response != null && response.IsSuccessStatusCode == true)
@@ -207,12 +197,20 @@ namespace GreenProjectMobile.ViewsModels
             }
             else if(response != null && response.IsSuccessStatusCode == false)
             {
-                
+                string errorMessage = "";
                 var result = await response.Content.ReadAsStringAsync();
                 RegisterResponseModel Errors = JsonConvert.DeserializeObject<RegisterResponseModel>(result);
-                Debug.WriteLine("réponse erreur", Errors);
+                List<List<string>>errorsList = Errors.msg.getAllErrors();
 
-                await Application.Current.MainPage.DisplayAlert("Erreur inscription", "Erreur dans le formulaire", "Ok");
+                foreach(List<string> error in errorsList)
+                {
+                    if (error != null )
+                    {
+                        errorMessage = errorMessage + error[0] + Environment.NewLine;
+                    }
+                }
+
+                await Application.Current.MainPage.DisplayAlert("Erreur inscription", errorMessage, "Ok");
             }
             return Items;
         }
