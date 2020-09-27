@@ -1,0 +1,253 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage
+    x:Class="GreenProjectMobile.Views.ProfileView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*" />
+                <RowDefinition Height="0.3*" />
+                <RowDefinition Height="0.5*" />
+                <RowDefinition Height="0.3*" />
+                <RowDefinition Height="0.5*" />
+                <RowDefinition Height="0.3*" />
+                <RowDefinition Height="0.5*" />
+                <RowDefinition Height="0.3*" />
+                <RowDefinition Height="0.5*" />
+                <RowDefinition Height="0.3*" />
+                <RowDefinition Height="0.5*" />
+                <RowDefinition Height="0.3*" />
+                <RowDefinition Height="0.5*" />
+                <RowDefinition Height="0.3*" />
+                <RowDefinition Height="0.5*" />
+                <RowDefinition Height="0.3*" />
+                <RowDefinition Height="0.5*" />
+                <RowDefinition Height="0.3*" />
+                <RowDefinition Height="0.5*" />
+                <RowDefinition Height="0.3*" />
+                <RowDefinition Height="0.5*" />
+                <RowDefinition Height="0.3*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <Label
+                Grid.Row="0"
+                Grid.Column="0"
+                FontSize="20"
+                HorizontalOptions="Center"
+                Text="Prénom : "
+                VerticalOptions="Center" />
+            <Label
+                Grid.Row="0"
+                Grid.Column="1"
+                FontSize="20"
+                HorizontalOptions="Center"
+                Text="{Binding Profile.firstName}"
+                VerticalOptions="Center" />
+            <BoxView
+                Grid.Row="1"
+                Grid.ColumnSpan="2"
+                Style="{StaticResource Separator}" />
+            <Label
+                Grid.Row="2"
+                Grid.Column="0"
+                FontSize="20"
+                HorizontalOptions="Center"
+                Text="Nom : "
+                VerticalOptions="Center" />
+            <Label
+                Grid.Row="2"
+                Grid.Column="1"
+                FontSize="20"
+                HorizontalOptions="Center"
+                Text="{Binding Profile.lastName}"
+                VerticalOptions="Center" />
+            <BoxView
+                Grid.Row="3"
+                Grid.ColumnSpan="2"
+                Style="{StaticResource Separator}" />
+            <Label
+                Grid.Row="4"
+                Grid.Column="0"
+                FontSize="20"
+                HorizontalOptions="Center"
+                Text="Pseudo : "
+                VerticalOptions="Center" />
+            <Label
+                Grid.Row="4"
+                Grid.Column="1"
+                FontSize="20"
+                HorizontalOptions="Center"
+                Text="{Binding Profile.alias}"
+                VerticalOptions="Center" />
+            <BoxView
+                Grid.Row="5"
+                Grid.ColumnSpan="2"
+                Style="{StaticResource Separator}" />
+            <Label
+                Grid.Row="6"
+                Grid.Column="0"
+                FontSize="20"
+                HorizontalOptions="Center"
+                Text="Level : "
+                VerticalOptions="Center" />
+            <Label
+                Grid.Row="6"
+                Grid.Column="1"
+                FontSize="20"
+                HorizontalOptions="Center"
+                Text="{Binding Profile.level}"
+                VerticalOptions="Center" />
+            <BoxView
+                Grid.Row="7"
+                Grid.ColumnSpan="2"
+                Style="{StaticResource Separator}" />
+            <Label
+                Grid.Row="8"
+                Grid.Column="0"
+                FontSize="20"
+                HorizontalOptions="Center"
+                Text="Adresse : "
+                VerticalOptions="Center" />
+            <Label
+                Grid.Row="8"
+                Grid.Column="1"
+                FontSize="20"
+                HorizontalOptions="Center"
+                Text="{Binding Profile.address}"
+                VerticalOptions="Center" />
+            <BoxView
+                Grid.Row="9"
+                Grid.ColumnSpan="2"
+                Style="{StaticResource Separator}" />
+            <Label
+                Grid.Row="10"
+                Grid.Column="0"
+                FontSize="20"
+                HorizontalOptions="Center"
+                Text="Ville : "
+                VerticalOptions="Center" />
+            <Label
+                Grid.Row="10"
+                Grid.Column="1"
+                FontSize="20"
+                HorizontalOptions="Center"
+                Text="{Binding Profile.city}"
+                VerticalOptions="Center" />
+            <BoxView
+                Grid.Row="11"
+                Grid.ColumnSpan="2"
+                Style="{StaticResource Separator}" />
+            <Label
+                Grid.Row="12"
+                Grid.Column="0"
+                FontSize="20"
+                HorizontalOptions="Center"
+                Text="Code postal : "
+                VerticalOptions="Center" />
+            <Label
+                Grid.Row="12"
+                Grid.Column="1"
+                FontSize="20"
+                HorizontalOptions="Center"
+                Text="{Binding Profile.postalCode}"
+                VerticalOptions="Center" />
+            <BoxView
+                Grid.Row="13"
+                Grid.ColumnSpan="2"
+                Style="{StaticResource Separator}" />
+            <Label
+                Grid.Row="14"
+                Grid.Column="0"
+                FontSize="20"
+                HorizontalOptions="Center"
+                Text="Email : "
+                VerticalOptions="Center" />
+            <Label
+                Grid.Row="14"
+                Grid.Column="1"
+                FontSize="20"
+                HorizontalOptions="Center"
+                Text="{Binding Profile.email}"
+                VerticalOptions="Center" />
+            <BoxView
+                Grid.Row="15"
+                Grid.ColumnSpan="2"
+                Style="{StaticResource Separator}" />
+            <Label
+                Grid.Row="16"
+                Grid.Column="0"
+                FontSize="20"
+                HorizontalOptions="Center"
+                Text="Sexe : "
+                VerticalOptions="Center" />
+            <Label
+                Grid.Row="16"
+                Grid.Column="1"
+                FontSize="20"
+                HorizontalOptions="Center"
+                Text="{Binding Profile.sexe}"
+                VerticalOptions="Center" />
+            <BoxView
+                Grid.Row="17"
+                Grid.ColumnSpan="2"
+                Style="{StaticResource Separator}" />
+            <Label
+                Grid.Row="18"
+                Grid.Column="0"
+                FontSize="20"
+                HorizontalOptions="Center"
+                Text="Email : "
+                VerticalOptions="Center" />
+            <Label
+                Grid.Row="18"
+                Grid.Column="1"
+                FontSize="20"
+                HorizontalOptions="Center"
+                Text="{Binding Profile.phone}"
+                VerticalOptions="Center" />
+            <BoxView
+                Grid.Row="19"
+                Grid.ColumnSpan="2"
+                Style="{StaticResource Separator}" />
+            <Label
+                Grid.Row="20"
+                Grid.Column="0"
+                FontSize="20"
+                HorizontalOptions="Center"
+                Text="Date de naissance : "
+                VerticalOptions="Center" />
+            <Label
+                Grid.Row="20"
+                Grid.Column="1"
+                FontSize="20"
+                HorizontalOptions="Center"
+                Text="{Binding Profile.birthday}"
+                VerticalOptions="Center" />
+            <BoxView
+                Grid.Row="21"
+                Grid.ColumnSpan="2"
+                Style="{StaticResource Separator}" />
+            <Label
+                Grid.Row="22"
+                Grid.Column="0"
+                FontSize="20"
+                HorizontalOptions="Center"
+                Text="Expérience : "
+                VerticalOptions="Center" />
+            <Label
+                Grid.Row="22"
+                Grid.Column="1"
+                FontSize="20"
+                HorizontalOptions="Center"
+                Text="{Binding Profile.exp}"
+                VerticalOptions="Center" />
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
