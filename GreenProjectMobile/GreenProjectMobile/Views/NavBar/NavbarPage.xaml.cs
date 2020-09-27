@@ -22,6 +22,7 @@ namespace GreenProjectMobile.Views
             btnProfile.Clicked += (s, e) => PageSelected?.Invoke(this, PageType.ProfileView);
             btnMain.Clicked += (s, e) => PageSelected?.Invoke(this, PageType.MainPage);
             btnAbout.Clicked += (s, e) => PageSelected?.Invoke(this, PageType.AboutPage);
+            btnProfile.Clicked += (s, e) => PageSelected?.Invoke(this, PageType.ProfileView);
 
             btnLogout.Clicked += (s, e) =>
             {
