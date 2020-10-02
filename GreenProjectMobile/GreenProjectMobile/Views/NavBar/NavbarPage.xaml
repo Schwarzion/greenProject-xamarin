@@ -5,27 +5,18 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     Title="Menu">
     <ContentPage.Content>
-        <StackLayout Margin="10">
+        <StackLayout Margin="10" BackgroundColor="White">
             <Label
-                FontSize="Medium"
+                FontSize="Title"
                 HorizontalTextAlignment="Center"
-                Text="GreenUp" />
-
-            <BoxView BackgroundColor="Gray" HeightRequest="1" />
-
-            <Button x:Name="btnMain" Text="Main" />
-            <Button x:Name="btnRegister" Text="Register" />
-            <Button x:Name="btnProfile" Text="Profile" />
-
-            <BoxView BackgroundColor="Gray" HeightRequest="1" />
-
-            <Button x:Name="btnQuests" Text="Quests" />
-            <Button x:Name="btnTips" Text="Tips" />
-
-            <BoxView BackgroundColor="Gray" HeightRequest="1" />
-
-            <Button x:Name="btnAbout" Text="About the application" />
-            <Button x:Name="btnLogout" Text="Logout" />
+                Text="GreenUp" TextColor="{StaticResource Cblue}"/>
+            <Button x:Name="btnMain" TextColor="{StaticResource Cblue}" Text="Main" BackgroundColor="White"/>
+            <Button x:Name="btnRegister" TextColor="{StaticResource Cblue}" Text="Register" BackgroundColor="White"/>
+            <Button x:Name="btnProfile" TextColor="{StaticResource Cblue}" Text="Profile" BackgroundColor="White"/>
+            <Button x:Name="btnQuests" TextColor="{StaticResource Cblue}" Text="Quests" BackgroundColor="White"/>
+            <Button x:Name="btnTips" TextColor="{StaticResource Cblue}" Text="Tips" BackgroundColor="White"/>
+            <Button x:Name="btnAbout" TextColor="{StaticResource Cblue}" Text="About the application" BackgroundColor="White"/>
+            <Button x:Name="btnLogout" TextColor="{StaticResource Cblue}" Text="Logout" BackgroundColor="White"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

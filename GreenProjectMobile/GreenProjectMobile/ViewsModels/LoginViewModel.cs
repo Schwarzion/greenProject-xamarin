@@ -11,6 +11,8 @@ using System.Windows.Input;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using GreenProjectMobile.Views;
+using System.IdentityModel.Tokens.Jwt;
+using GreenProjectMobile.Services;
 
 namespace GreenProjectMobile.ViewsModels
 {
@@ -70,10 +72,12 @@ namespace GreenProjectMobile.ViewsModels
             };
             string loginJson = JsonConvert.SerializeObject(loginItems);
             TokenModel response = await LoginRequest("login", loginJson);
-            Debug.WriteLine(response != null && response.token != null);
             if (response != null && response.token != null)
             {
+                var handler = new JwtSecurityTokenHandler();
+                var jsonToken = handler.ReadToken(response.token);
                 await SecureStorage.SetAsync("Token", response.token);
+                HttpClientService.setToken();
                 await Application.Current.MainPage.DisplayAlert("Connexion", "La connexion est un succès.", "Ok");
                 await Application.Current.MainPage.Navigation.PushModalAsync(new NavbarDetailPage());
             }

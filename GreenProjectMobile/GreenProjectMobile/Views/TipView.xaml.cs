@@ -1,8 +1,4 @@
-﻿using Android.OS;
-using GreenProjectMobile.Models;
-using GreenProjectMobile.ViewsModels;
-using System;
-using System.Collections.Generic;
+﻿using GreenProjectMobile.ViewsModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 

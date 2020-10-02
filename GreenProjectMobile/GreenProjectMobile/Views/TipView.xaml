@@ -10,7 +10,14 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <Label VerticalOptions="Center" HorizontalOptions="Center" FontSize="20" Text="{Binding name}"/>
+                        <Expander>
+                            <Expander.Header>
+                                <Label VerticalOptions="Center" Padding="20,0,0,0" TextColor="{StaticResource Cblue}" FontSize="20" Text="{Binding name}"/>
+                            </Expander.Header>
+                            <Label Grid.Column="1"
+                                Text="Baboons are African and Arabian Old World monkeys belonging to the genus Papio, part of the subfamily Cercopithecinae."
+                                FontAttributes="Italic" />
+                        </Expander>
                     </ViewCell>
                 </DataTemplate> 
             </ListView.ItemTemplate> 

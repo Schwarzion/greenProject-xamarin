@@ -6,6 +6,9 @@
              mc:Ignorable="d"
              x:Class="GreenProjectMobile.App">
     <Application.Resources>
-
+        <!-- Colors -->
+        <Color x:Key="Cgreen">#51CB40</Color>
+        <Color x:Key="ClightBlue">#17BEBB</Color>
+        <Color x:Key="Cblue">#0E7C7B</Color>
     </Application.Resources>
 </Application>
