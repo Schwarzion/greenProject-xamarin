@@ -29,5 +29,9 @@ namespace GreenProjectMobile.Views
                 vm.SubmitCommand.Execute(null);
             };
         }
+        protected override bool OnBackButtonPressed()
+        {
+            return true;
+        }
     }
 }

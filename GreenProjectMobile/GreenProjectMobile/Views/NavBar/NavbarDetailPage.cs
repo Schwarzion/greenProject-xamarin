@@ -15,11 +15,13 @@ namespace GreenProjectMobile.ViewsModels
 
             this.Master = master;
 
-            this.Detail = new NavigationPage(new AboutPage());
+            this.Detail = new NavigationPage(new MainPage());
 
             this.MasterBehavior = MasterBehavior.Popover;
 
             master.PageSelected += MasterPageSelected;
+
+
         }
 
         void MasterPageSelected(object sender, PageType e)
@@ -33,11 +35,17 @@ namespace GreenProjectMobile.ViewsModels
 
             switch (pageType)
             {
+                case PageType.Tips:
+                    page = new Tips();
+                    break;
                 case PageType.LoginView:
                     page = new LoginView();
                     break;
                 case PageType.MainPage:
                     page = new MainPage();
+                    break;
+                case PageType.AboutPage:
+                    page = new AboutPage();
                     break;
                 default:
                     page = new MainPage();

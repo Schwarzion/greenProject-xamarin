@@ -4,15 +4,10 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Diagnostics;
-using System.Drawing;
 using System.Net.Http;
-using System.Net.Http.Headers;
 using System.Runtime.CompilerServices;
-using System.Threading.Tasks;
-using Xamarin.Essentials;
 
 namespace GreenProjectMobile.ViewsModels
 {
@@ -56,10 +51,6 @@ namespace GreenProjectMobile.ViewsModels
                     tips = JsonConvert.DeserializeObject<TipsResult>(contents);
                     List<Tip> list = new List<Tip>(tips.tips);
                     tipList = new ObservableCollection<Tip>(list as List<Tip>);
-                    foreach (Tip elem in tipList)
-                    {
-                        Debug.WriteLine(elem.name);
-                    }
                 }
             }
             catch (Exception ex)

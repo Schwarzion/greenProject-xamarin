@@ -8,12 +8,9 @@
     mc:Ignorable="d">
 
     <StackLayout>
-
         <Label
             HorizontalOptions="Center"
             Text="MainPage"
             VerticalOptions="CenterAndExpand" />
-
     </StackLayout>
-
 </ContentPage>
