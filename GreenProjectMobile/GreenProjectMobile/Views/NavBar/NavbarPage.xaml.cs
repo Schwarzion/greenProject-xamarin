@@ -18,11 +18,10 @@ namespace GreenProjectMobile.Views
         public NavbarPage()
         {
             InitializeComponent();
-            //btnLogin.Clicked += (s, e) => PageSelected?.Invoke(this, PageType.LoginView);
             btnProfile.Clicked += (s, e) => PageSelected?.Invoke(this, PageType.ProfileView);
             btnMain.Clicked += (s, e) => PageSelected?.Invoke(this, PageType.MainPage);
             btnAbout.Clicked += (s, e) => PageSelected?.Invoke(this, PageType.AboutPage);
-
+            btnTips.Clicked += (s, e) => PageSelected?.Invoke(this, PageType.Tips);
             btnLogout.Clicked += (s, e) =>
             {
                 SecureStorage.Remove("Token");
