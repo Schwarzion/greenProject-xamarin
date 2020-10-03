@@ -8,6 +8,8 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using GreenProjectMobile.Models;
 using Xamarin.Essentials;
+using System.Net.Http;
+using GreenProjectMobile.Services;
 
 namespace GreenProjectMobile.Views
 {
@@ -15,6 +17,7 @@ namespace GreenProjectMobile.Views
     public partial class NavbarPage : ContentPage
     {
         public event EventHandler<PageType> PageSelected;
+
         public NavbarPage()
         {
             InitializeComponent();
@@ -27,6 +30,7 @@ namespace GreenProjectMobile.Views
             btnLogout.Clicked += (s, e) =>
             {
                 SecureStorage.Remove("Token");
+                HttpClientService.logout();
                 Navigation.PushModalAsync(new NavigationPage(new LoginView()));
             };
         }

@@ -15,13 +15,13 @@ namespace GreenProjectMobile
         public MainPage()
         {
             Authorization();
+            Console.WriteLine("Here");
             InitializeComponent();
         }
 
         public async void Authorization()
         {
             string oauthToken = await SecureStorage.GetAsync("Token");
-            Console.WriteLine(oauthToken);
             if (String.IsNullOrEmpty(oauthToken))
             {
                 await Navigation.PushModalAsync(new NavigationPage(new LoginView()));
