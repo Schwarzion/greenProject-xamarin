@@ -19,7 +19,10 @@ namespace GreenProjectMobile
 =======
             Authorization();
             Console.WriteLine("Here");
+<<<<<<< HEAD
 >>>>>>> ac460c6... Logout on API
+=======
+>>>>>>> cd66e51... Logout on API
             InitializeComponent();
             Authorization();
             BindingContext = new MainViewModel();
