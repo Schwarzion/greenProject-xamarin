@@ -1,10 +1,8 @@
 ﻿using GreenProjectMobile.Views;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.IdentityModel.Tokens.Jwt;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace GreenProjectMobile
@@ -16,12 +14,29 @@ namespace GreenProjectMobile
     {
         public MainPage()
         {
+            Authorization();
             InitializeComponent();
         }
 
-        public void ShowTestView(object sender, EventArgs args)
+        public async void Authorization()
         {
-            Navigation.PushModalAsync(new NavigationPage(new TestView()));
+            string oauthToken = await SecureStorage.GetAsync("Token");
+            Console.WriteLine(oauthToken);
+            if (String.IsNullOrEmpty(oauthToken))
+            {
+                await Navigation.PushModalAsync(new NavigationPage(new LoginView()));
+            }
+            else
+            {
+                var handler = new JwtSecurityTokenHandler();
+                var jsonToken = handler.ReadToken(oauthToken);
+                DateTime utcDate = DateTime.UtcNow;
+                if (utcDate < jsonToken.ValidTo)
+                {
+                    SecureStorage.Remove("Token");
+                    await Navigation.PushModalAsync(new NavigationPage(new LoginView()));
+                }
+            }
         }
     }
 }

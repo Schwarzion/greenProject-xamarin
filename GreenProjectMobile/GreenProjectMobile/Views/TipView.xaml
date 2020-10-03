@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local="clr-namespace:GreenProjectMobile.ViewsModels"
+             mc:Ignorable="d"
+             x:Class="GreenProjectMobile.Views.Tips">
+    <ContentPage.Content>
+        <ListView x:Name="tipListView" ItemsSource="{Binding tipList}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Expander>
+                            <Expander.Header>
+                                <Label VerticalOptions="Center" Padding="20,0,0,0" TextColor="{StaticResource Cblue}" FontSize="20" Text="{Binding name}"/>
+                            </Expander.Header>
+                            <Label Grid.Column="1"
+                                Text="Baboons are African and Arabian Old World monkeys belonging to the genus Papio, part of the subfamily Cercopithecinae."
+                                FontAttributes="Italic" />
+                        </Expander>
+                    </ViewCell>
+                </DataTemplate> 
+            </ListView.ItemTemplate> 
+        </ListView>
+    </ContentPage.Content>
+</ContentPage>

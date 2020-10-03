@@ -6,6 +6,13 @@
              mc:Ignorable="d"
              x:Class="GreenProjectMobile.App">
     <Application.Resources>
-
+        <Style TargetType="NavigationPage">
+            <Setter Property="BarBackgroundColor" Value="#0E7C7B"></Setter>
+            <Setter Property="BarTextColor" Value="White"></Setter>
+        </Style>
+        <!-- Colors -->
+        <Color x:Key="Cgreen">#51CB40</Color>
+        <Color x:Key="ClightBlue">#17BEBB</Color>
+        <Color x:Key="Cblue">#0E7C7B</Color>
     </Application.Resources>
 </Application>

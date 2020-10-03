@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreenProjectMobile.Android"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreenProjectMobile.iOS", "GreenProjectMobile\GreenProjectMobile.iOS\GreenProjectMobile.iOS.csproj", "{9BA68413-065D-40D5-83A4-224AEE7805CB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreenProjectMobile", "GreenProjectMobile\GreenProjectMobile\GreenProjectMobile.csproj", "{F056B59C-4BAF-4FAF-B94A-FAAB8578AA20}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GreenProjectMobile", "GreenProjectMobile\GreenProjectMobile\GreenProjectMobile.csproj", "{F056B59C-4BAF-4FAF-B94A-FAAB8578AA20}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

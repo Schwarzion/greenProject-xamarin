@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="GreenProjectMobile.Views.LoginView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"  BackgroundColor="{StaticResource Cblue}">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="Center" Orientation="Vertical" Spacing="80">
+            <Entry
+                        x:Name="Email"
+                        HorizontalOptions="CenterAndExpand"
+                        Placeholder="Email"
+                        Text="{Binding Email}"
+                        VerticalOptions="CenterAndExpand"
+                        WidthRequest="300" HorizontalTextAlignment="Center" TextColor="White"/>
+            <Entry
+                        x:Name="Password"
+                        HorizontalOptions="CenterAndExpand"
+                        IsPassword="True"
+                        Placeholder="Mot de passe"
+                        Text="{Binding Password}"
+                        VerticalOptions="CenterAndExpand"
+                        WidthRequest="300" HorizontalTextAlignment="Center" TextColor="White"/>
+
+            <Button
+                x:Name="btnConnexion" FontSize="12" Command="{Binding SubmitCommand}"
+                BackgroundColor="White" TextColor="{StaticResource Cblue}" Text="Se connecter" Margin="110,0,110,0"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
