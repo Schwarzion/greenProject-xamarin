@@ -7,6 +7,13 @@
             <Label Text="Page à propos"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
+
+            <Label Text="Cette application a été développée par Mohammed Fadika, Victor Lehouck, Coline Tylec, Thomas Vionnet et Florian Werquin"
+                VerticalOptions="Center" 
+                HorizontalOptions="CenterAndExpand" 
+                Padding="25"      
+             />
+
             <Label Text="Mettre un mail de contact"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />

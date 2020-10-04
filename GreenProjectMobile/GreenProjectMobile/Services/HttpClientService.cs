@@ -1,10 +1,7 @@
-﻿using Android.OS;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Net.Http;
-using Java.Util.Functions;
-using Org.Apache.Http.Protocol;
 using System.Net.Http.Headers;
 using Xamarin.Essentials;
 

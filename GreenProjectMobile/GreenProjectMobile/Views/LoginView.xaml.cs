@@ -30,7 +30,7 @@ namespace GreenProjectMobile.Views
                 vm.SubmitCommand.Execute(null);
             };
 
-            btnToRegister.Clicked += (s, e) => Navigation.PushAsync(new NavigationPage(new RegisterPage()));
+            btnToRegister.Clicked += (s, e) => Navigation.PushAsync(new RegisterPage());
         }
         protected override bool OnBackButtonPressed()
         {

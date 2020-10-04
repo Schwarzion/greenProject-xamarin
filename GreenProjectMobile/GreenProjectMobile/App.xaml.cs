@@ -7,10 +7,11 @@ using System.Net.Http;
 using System.Diagnostics;
 using System.Threading.Tasks;
 using GreenProjectMobile.Services;
+using Xamarin.Forms.PlatformConfiguration.AndroidSpecific;
 
 namespace GreenProjectMobile
 {
-    public partial class App : Application
+    public partial class App : Xamarin.Forms.Application
     {
 
         public App()
