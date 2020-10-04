@@ -1,5 +1,4 @@
-﻿using Java.Util.Functions;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace GreenProjectMobile.Models.AuthenticationModels
 {
