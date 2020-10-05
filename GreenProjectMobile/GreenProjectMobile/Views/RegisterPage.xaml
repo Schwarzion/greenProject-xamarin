@@ -5,12 +5,17 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="GreenProjectMobile.Views.RegisterPage">
-    <ContentPage.Content>
+
+        <NavigationPage.TitleView>
+            <StackLayout>
+                <Label Text="Inscription" TextColor="White" HorizontalTextAlignment="Center" FontSize="20" Margin="0, 0, 75, 0" />
+            </StackLayout>
+        </NavigationPage.TitleView>
+    
+        <ContentPage.Content>
         <ScrollView>
             <ScrollView.Content>
                 <StackLayout Padding="10">
-                    <Label Text="Inscription" HorizontalOptions="CenterAndExpand" />
-
                     <Entry x:Name="email" Placeholder="Email" Text="{Binding Email}"/>
                     <Entry x:Name="firstName" Placeholder="Prénom" Text="{Binding FirstName}"/>
                     <Entry x:Name="lastName" Placeholder="Nom" Text="{Binding LastName}"/>
@@ -36,6 +41,10 @@
                         x:Name="btnRegister"
                         Text="S'inscrire !"
                         Command="{Binding RegisterCommand}"
+                        FontSize="12"
+                        BackgroundColor="{StaticResource Cblue}" 
+                        TextColor="White" 
+                        Margin="110,0,110,0"
                     />
                 </StackLayout>
             </ScrollView.Content>

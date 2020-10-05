@@ -6,19 +6,17 @@
     Title="Menu" BackgroundColor="{StaticResource Cblue}">
     <ContentPage.Content>
         <StackLayout VerticalOptions="CenterAndExpand" BackgroundColor="{StaticResource Cblue}">
-            <Button Margin="10,10,10,10" FontSize="32" x:Name="btnMain" TextColor="{StaticResource Cblue}" Text="Main" BackgroundColor="White"/>
+            <Button Margin="10,10,10,10" FontSize="24" x:Name="btnMain" TextColor="{StaticResource Cblue}" Text="Accueil" BackgroundColor="White"/>
             <BoxView   VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="1" WidthRequest="50" Color="White"></BoxView>
-            <Button Margin="10,10,10,10" FontSize="32" x:Name="btnProfile" TextColor="{StaticResource Cblue}" Text="Profile" BackgroundColor="White"/>
+            <Button Margin="10,10,10,10" FontSize="24" x:Name="btnProfile" TextColor="{StaticResource Cblue}" Text="Profile" BackgroundColor="White"/>
             <BoxView   VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="1" WidthRequest="50" Color="White"></BoxView>
-            <Button Margin="10,10,10,10" FontSize="32" x:Name="btnQuests" TextColor="{StaticResource Cblue}" Text="Quests" BackgroundColor="White"/>
+            <Button Margin="10,10,10,10" FontSize="24" x:Name="btnQuests" TextColor="{StaticResource Cblue}" Text="Quests" BackgroundColor="White"/>
             <BoxView   VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="1" WidthRequest="50" Color="White"></BoxView>
-            <Button Margin="10,10,10,10" FontSize="32" x:Name="btnTips" TextColor="{StaticResource Cblue}" Text="Tips" BackgroundColor="White"/>
+            <Button Margin="10,10,10,10" FontSize="24" x:Name="btnTips" TextColor="{StaticResource Cblue}" Text="Tips" BackgroundColor="White"/>
             <BoxView   VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="1" WidthRequest="50" Color="White"></BoxView>
-            <Button Margin="10,10,10,10" FontSize="32" x:Name="btnAbout" TextColor="{StaticResource Cblue}" Text="A propos" BackgroundColor="White"/>
+            <Button Margin="10,10,10,10" FontSize="24" x:Name="btnAbout" TextColor="{StaticResource Cblue}" Text="A propos" BackgroundColor="White"/>
             <BoxView   VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="1" WidthRequest="50" Color="White"></BoxView>
-            <Button Margin="10,10,10,10" FontSize="32" x:Name="btnRegister" TextColor="{StaticResource Cblue}" Text="Register" BackgroundColor="White"/>
-            <BoxView   VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="1" WidthRequest="50" Color="White"></BoxView>
-            <Button Margin="10,10,10,10" FontSize="32" x:Name="btnLogout" TextColor="{StaticResource Cblue}" Text="Logout" BackgroundColor="White"/>
+            <Button Margin="10,10,10,10" FontSize="24" x:Name="btnLogout" TextColor="{StaticResource Cblue}" Text="Logout" BackgroundColor="White"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
