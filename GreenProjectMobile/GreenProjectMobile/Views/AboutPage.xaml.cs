@@ -17,7 +17,7 @@ namespace GreenProjectMobile.Views
             InitializeComponent();
             btnContact.Clicked += (sender, e) =>
             {
-                Launcher.OpenAsync(new Uri("mailto:th.vionnet@gmail.com"));
+                Launcher.OpenAsync(new Uri("mailto:appgreenup@gmail.com"));
             };
         }
     }

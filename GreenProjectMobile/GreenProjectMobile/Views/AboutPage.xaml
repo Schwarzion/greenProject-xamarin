@@ -19,7 +19,6 @@
                 Padding="25"      
              />
 
-
             <Label Text="GreenUp a été développée par Mohammed Fadika, Victor Lehouck, Coline Tylec, Thomas Vionnet et Florian Werquin"
                 VerticalOptions="Center" 
                 HorizontalOptions="CenterAndExpand" 
