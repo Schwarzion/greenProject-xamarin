@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GreenProjectMobile.Views.QuestDetailView">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" Padding="5,5,5,5">
+            <Label Text="{x:Binding Quest.name}"></Label>
+            <Label Text="{x:Binding Quest.desc}"></Label>
+            <Label Text="{x:Binding Quest.expAmount}"></Label>
+            <Label Text="{x:Binding Quest.minLevel}"></Label>
+            <Label Text="{x:Binding Quest.timeForQuest}"></Label>
+            <Label Text="{x:Binding Quest.endDate}"></Label>
+            <Label Text="{x:Binding Quest.questStatus}"></Label>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -7,12 +7,29 @@
              x:Class="GreenProjectMobile.Views.Quests">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="YO MEUF"/>
-            <ListView x:Name="questListView" ItemsSource="{Binding questList}">
+            <Label Text="Liste des quêtes"/>
+            <ListView x:Name="questListView" ItemsSource="{Binding questList}" SelectedItem="{Binding selectedQuest}" VerticalOptions="FillAndExpand" CachingStrategy="RecycleElement" ItemSelected="Handle_ItemSelected">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <Label VerticalOptions="Center" HorizontalOptions="Center" FontSize="20" Text="{Binding name}"/>
+                            <!--<Grid Padding="5">-->
+                                <!--<Grid.RowDefinitions>
+                                    <RowDefinition Height="50"></RowDefinition>
+                                    <RowDefinition Height="50"></RowDefinition>
+                                    <RowDefinition Height="50"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>-->
+                                <Label WidthRequest="50" HeightRequest="200" VerticalOptions="Center" HorizontalOptions="Center" FontSize="20" Text="{Binding name}"/>
+                                <!--<Label Grid.Column="0" Grid.Row="0" VerticalOptions="Center" HorizontalOptions="Center" Margin="10" Text="{Binding name}" />
+                                <Label Grid.Column="0" Grid.Row="1" VerticalOptions="Center" HorizontalOptions="Center" Margin="10" Text="{Binding name}" />
+                                <Label Grid.Column="0" Grid.Row="2" VerticalOptions="Center" HorizontalOptions="Center" Margin="10" Text="{Binding name}" />
+                                <Label Grid.Column="1" Grid.Row="0" VerticalOptions="Center" HorizontalOptions="Center" Margin="10" Text="{Binding name}" />
+                                <Label Grid.Column="1" Grid.Row="1" VerticalOptions="Center" HorizontalOptions="Center" Margin="10" Text="{Binding name}" />
+                                <Label Grid.Column="1" Grid.Row="2" VerticalOptions="Center" HorizontalOptions="Center" Margin="10" Text="{Binding name}" />-->
+                            <!--</Grid>-->
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>

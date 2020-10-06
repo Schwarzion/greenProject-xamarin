@@ -85,6 +85,12 @@ namespace GreenProjectMobile.ViewsModels
             }
         }
 
+        public Quest selectedQuest
+        {
+            get;
+            set;
+        }
+
         //public async Task<ObservableCollection<Quest>> GetQuestsRequest()
         //{
 
