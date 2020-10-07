@@ -31,7 +31,7 @@ namespace GreenProjectMobile
                 var handler = new JwtSecurityTokenHandler();
                 var jsonToken = handler.ReadToken(oauthToken);
                 DateTime utcDate = DateTime.UtcNow;
-                if (utcDate < jsonToken.ValidTo)
+                if (utcDate > jsonToken.ValidTo)
                 {
                     SecureStorage.Remove("Token");
                     await Navigation.PushModalAsync(new NavigationPage(new LoginView()));

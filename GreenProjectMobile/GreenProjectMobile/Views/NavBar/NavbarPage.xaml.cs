@@ -25,8 +25,6 @@ namespace GreenProjectMobile.Views
             btnMain.Clicked += (s, e) => PageSelected?.Invoke(this, PageType.MainPage);
             btnAbout.Clicked += (s, e) => PageSelected?.Invoke(this, PageType.AboutPage);
             btnTips.Clicked += (s, e) => PageSelected?.Invoke(this, PageType.Tips);
-            btnProfile.Clicked += (s, e) => PageSelected?.Invoke(this, PageType.ProfileView);
-
             btnLogout.Clicked += (s, e) =>
             {
                 SecureStorage.Remove("Token");
