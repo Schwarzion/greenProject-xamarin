@@ -1,24 +1,24 @@
-﻿using System;
+﻿using GreenProjectMobile.ViewsModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Xamarin.Essentials;
+
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace GreenProjectMobile.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class AboutPage : ContentPage
+    public partial class RegisterPage : ContentPage
     {
-        public AboutPage()
+        public RegisterPage()
         {
+            var registerContext = new RegisterViewModel();
+            this.BindingContext = registerContext;
+
             InitializeComponent();
-            btnContact.Clicked += (sender, e) =>
-            {
-                Launcher.OpenAsync(new Uri("mailto:appgreenup@gmail.com"));
-            };
         }
     }
 }

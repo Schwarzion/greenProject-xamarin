@@ -27,6 +27,8 @@
             <Button
                 x:Name="btnConnexion" FontSize="12" Command="{Binding SubmitCommand}"
                 BackgroundColor="White" TextColor="{StaticResource Cblue}" Text="Se connecter" Margin="110,0,110,0"/>
+
+            <Button x:Name="btnToRegister" FontSize="12" BackgroundColor="White" TextColor="{StaticResource Cblue}" Text="S'inscrire" Margin="110,0,110,0" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

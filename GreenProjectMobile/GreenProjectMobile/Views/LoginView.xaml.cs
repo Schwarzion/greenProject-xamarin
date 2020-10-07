@@ -17,6 +17,7 @@ namespace GreenProjectMobile.Views
         {
             var vm = new LoginViewModel();
             this.BindingContext = vm;
+
             InitializeComponent();
 
             Email.Completed += (object sender, EventArgs e) =>
@@ -24,10 +25,12 @@ namespace GreenProjectMobile.Views
                 Password.Focus();
             };
 
-            Password.Completed += async (object sender, EventArgs e) =>
+            Password.Completed += (object sender, EventArgs e) =>
             {
                 vm.SubmitCommand.Execute(null);
             };
+
+            btnToRegister.Clicked += (s, e) => Navigation.PushAsync(new RegisterPage());
         }
         protected override bool OnBackButtonPressed()
         {

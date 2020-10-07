@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="GreenProjectMobile.Views.RegisterPage">
+
+        <NavigationPage.TitleView>
+            <StackLayout>
+                <Label Text="Inscription" TextColor="White" HorizontalTextAlignment="Center" FontSize="20" Margin="0, 0, 75, 0" />
+            </StackLayout>
+        </NavigationPage.TitleView>
+    
+        <ContentPage.Content>
+        <ScrollView>
+            <ScrollView.Content>
+                <StackLayout Padding="10">
+                    <Entry x:Name="email" Placeholder="Email" Text="{Binding Email}"/>
+                    <Entry x:Name="firstName" Placeholder="Prénom" Text="{Binding FirstName}"/>
+                    <Entry x:Name="lastName" Placeholder="Nom" Text="{Binding LastName}"/>
+                    <Entry x:Name="alias" Placeholder="Pseudo" Text="{Binding Alias}"/>
+                    
+                    <Label Text="Sexe"/>
+                    <Picker 
+                        x:Name="sexe"
+                        Title="Choisissez votre sexe"
+                        ItemsSource="{Binding Sexes}"
+                        SelectedItem="{Binding SelectedSex}"
+                     />
+                    
+                    <Entry x:Name="address" Placeholder="Adresse" Text="{Binding Address}"/>
+                    <Entry x:Name="city" Placeholder="Ville" Text="{Binding City}"/>
+                    <Entry x:Name="postalCode" Placeholder="Code postal" Text="{Binding PostalCode}"/>
+                    <Entry x:Name="phone" Placeholder="Téléphone" Text="{Binding Phone}"/>
+                    <Label Text="Date de naissance"/>
+                    <DatePicker x:Name="birthday" MinimumDate="01/01/1920" MaximumDate="12/31/2120" Date="{Binding Birthday}" />
+                    <Entry x:Name="password" IsPassword="True" Placeholder="Mot de passe" Text="{Binding Password}"/>
+                    <Entry x:Name="confirmPassword" IsPassword="True" Placeholder="Confirmer mot de passe" Text="{Binding ConfirmPassword}"/>
+                    <Button
+                        x:Name="btnRegister"
+                        Text="S'inscrire !"
+                        Command="{Binding RegisterCommand}"
+                        FontSize="12"
+                        BackgroundColor="{StaticResource Cblue}" 
+                        TextColor="White" 
+                        Margin="110,0,110,0"
+                    />
+                </StackLayout>
+            </ScrollView.Content>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
