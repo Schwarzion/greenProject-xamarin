@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 85efd06... [FIX] Datetime validation token
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +12,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using GreenProjectMobile.Models;
 using Xamarin.Essentials;
+<<<<<<< HEAD
 using System.Net.Http;
 using GreenProjectMobile.Services;
 
@@ -45,6 +49,8 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using GreenProjectMobile.Models;
 using Xamarin.Essentials;
+=======
+>>>>>>> 85efd06... [FIX] Datetime validation token
 using System.Net.Http;
 using GreenProjectMobile.Services;
 
@@ -66,9 +72,16 @@ namespace GreenProjectMobile.Views
             {
                 SecureStorage.Remove("Token");
                 HttpClientService.logout();
+<<<<<<< HEAD
                 Navigation.PushModalAsync(new NavigationPage(new LoginView()));
             };
         }
     }
 >>>>>>> ac460c6... Logout on API
+=======
+                Navigation.PushModalAsync(new NavigationPage(new LoginView()));
+            };
+        }
+    }
+>>>>>>> 85efd06... [FIX] Datetime validation token
 }
