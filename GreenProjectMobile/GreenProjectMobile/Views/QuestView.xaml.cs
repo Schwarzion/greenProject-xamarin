@@ -23,7 +23,7 @@ namespace GreenProjectMobile.Views
         async void Handle_ItemSelected(object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)
         {
             var questDetailPage = new QuestDetailView(e.SelectedItem as Quest);
-            await Navigation.PushAsync(questDetailPage);
+            await Navigation.PushModalAsync(questDetailPage);
         }
     }
 }
