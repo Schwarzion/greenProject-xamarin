@@ -19,5 +19,9 @@ namespace GreenProjectMobile.Views
             this.BindingContext = vm;
             InitializeComponent();
         }
+        void UpdateProfile(object sender, EventArgs e)
+        {
+            Navigation.PushModalAsync(new NavbarDetailPage());
+        }
     }
 }
