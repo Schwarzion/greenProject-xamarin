@@ -27,6 +27,7 @@ namespace GreenProjectMobile.ViewsModels
         }
 
         private ProfileModel profile;
+        private string sexe;
 
 
         public ProfileModel Profile
@@ -38,14 +39,49 @@ namespace GreenProjectMobile.ViewsModels
 
             private set
             {
-                if(profile != value)
+                if (profile != value)
                 {
                     profile = value;
+                    getProfilSex(profile.sexe);
                     NotifyPropertyChanged();
 
                 }
             }
         }
+        public string Sexe
+        {
+            get
+            {
+                return sexe;
+            }
+
+            private set
+            {
+                if (sexe != value)
+                {
+                    sexe = value;
+                    NotifyPropertyChanged();
+
+                }
+            }
+        }
+
+        private void getProfilSex(int sexe)
+        {
+            if (sexe == 0)
+            {
+                Sexe = "H";
+            }
+            if (sexe == 1)
+            {
+                Sexe = "F";
+            }
+            if (sexe == 2)
+            {
+                Sexe = "A";
+            }
+        }
+
 
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -78,5 +114,6 @@ namespace GreenProjectMobile.ViewsModels
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
             }
         }
+
     }
 }
