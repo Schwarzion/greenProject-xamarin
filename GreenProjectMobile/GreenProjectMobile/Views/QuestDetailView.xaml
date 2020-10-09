@@ -22,8 +22,7 @@
             <Label Text="{x:Binding Quest.expAmount}" Grid.Column="1" Grid.Row="2" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" TextColor="Black" FontAttributes="Bold"></Label>
             <Label Text="Niveau requis" Grid.Column="3" Grid.Row="2" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" TextColor="Black"></Label>
             <Label Text="{x:Binding Quest.minLevel}" Grid.Column="4" Grid.Row="2" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" TextColor="Black" FontAttributes="Bold"></Label>
-            <Button Text="Accepter" Grid.Column="0" Grid.ColumnSpan="2"  Grid.Row="3" HorizontalOptions="FillAndExpand" VerticalOptions="Center" TextColor="White" BackgroundColor="Green"></Button>
-            <Button Text="Abandonner" Grid.Column="3" Grid.ColumnSpan="2" Grid.Row="3" HorizontalOptions="FillAndExpand" VerticalOptions="Center" TextColor="White" BackgroundColor="Red"></Button>
+            <Button Text="Accepter" Grid.Column="0" Grid.ColumnSpan="5"  Grid.Row="3" HorizontalOptions="FillAndExpand" VerticalOptions="Center" TextColor="White" BackgroundColor="Green"></Button>
         </Grid>
     </ContentPage.Content>
 </ContentPage>
