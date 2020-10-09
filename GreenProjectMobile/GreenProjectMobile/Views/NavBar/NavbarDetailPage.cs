@@ -20,7 +20,7 @@ namespace GreenProjectMobile.ViewsModels
             this.MasterBehavior = MasterBehavior.Popover;
 
             master.PageSelected += MasterPageSelected;
-            PresentDetailPage(PageType.AboutPage);
+            PresentDetailPage(PageType.MainPage);
         }
 
         void MasterPageSelected(object sender, PageType e)
