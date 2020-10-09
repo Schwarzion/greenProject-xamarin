@@ -26,6 +26,7 @@ namespace GreenProjectMobile.Models.ProfileModels
         public string phone { get; set; }
         public string birthday { get; set; }
         public int exp { get; set; }
+        public int avatar { get; set; }
         public object temparyPasswordValid { get; set; }
     }
 }

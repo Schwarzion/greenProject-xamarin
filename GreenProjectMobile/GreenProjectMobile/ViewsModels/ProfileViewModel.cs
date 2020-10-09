@@ -26,40 +26,80 @@ namespace GreenProjectMobile.ViewsModels
             getProfile();
         }
 
-        private ProfileModel profile;
-        private string sexe;
+        private ProfileModel _profile;
+        private string _sexe;
+        private string _avatar;
 
 
-        public ProfileModel Profile
+        public string Avatar
         {
             get
-            {
-                return profile;
+            { 
+                return _avatar;
             }
 
             private set
             {
-                if (profile != value)
+                if (_avatar != value)
                 {
-                    profile = value;
-                    getProfilSex(profile.sexe);
+                    _avatar = value;
                     NotifyPropertyChanged();
 
                 }
             }
         }
-        public string Sexe
+
+        public ProfileModel Profile
         {
             get
             {
-                return sexe;
+                return _profile;
             }
 
             private set
             {
-                if (sexe != value)
+                if (_profile != value)
                 {
-                    sexe = value;
+                    _profile = value;
+                    getProfilSex(_profile.sexe);
+                    getProfileAvatar(_profile.avatar);
+                    NotifyPropertyChanged();
+
+                }
+            }
+        }
+
+        private void getProfileAvatar(object avatar)
+        {
+            switch(avatar)
+            {
+                case 2:
+                    Avatar = "picture2.jpg";
+                    break;
+                case 3:
+                    Avatar = "picture3.jpg";
+                    break;
+                case 4:
+                    Avatar = "picture4.jpg";
+                    break;
+                default:
+                    Avatar = "picture1.jpg";
+                    break;
+            }
+        }
+
+        public string Sexe
+        {
+            get
+            {
+                return _sexe;
+            }
+
+            private set
+            {
+                if (_sexe != value)
+                {
+                    _sexe = value;
                     NotifyPropertyChanged();
 
                 }

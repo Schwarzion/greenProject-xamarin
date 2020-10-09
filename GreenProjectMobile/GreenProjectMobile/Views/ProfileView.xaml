@@ -86,7 +86,7 @@
                             HasShadow="False"
                             HeightRequest="50"
                             WidthRequest="10">
-                            <Image HeightRequest="50" Source="bee1.jpg" />
+                            <Image HeightRequest="50" Source="{Binding Avatar}" />
                         </Frame>
 
                         <!--  Top right  -->
