@@ -18,13 +18,13 @@ namespace GreenProjectMobile.ViewsModels
         public MainViewModel()
         {
             client = HttpClientService.client;
-            GetUserquests();
+            //GetUserquests();
         }
 
         public Tip Tips { get; private set; }
 
-        private ObservableCollection<Quest> _tipList;
-        public ObservableCollection<Quest> tipList
+        private ObservableCollection<Tip> _tipList;
+        public ObservableCollection<Tip> tipList
         {
             get
             {
@@ -39,7 +39,7 @@ namespace GreenProjectMobile.ViewsModels
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public async void GetUserquests()
+       /* public async void GetUserquests()
         {
             QuestsResult quest = new QuestsResult();
             try
