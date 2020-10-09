@@ -18,48 +18,54 @@ namespace GreenProjectMobile.ViewsModels
         public MainViewModel()
         {
             client = HttpClientService.client;
-            //GetUserquests();
+            GetUserquests();
         }
 
         public Tip Tips { get; private set; }
 
-        private ObservableCollection<Tip> _tipList;
-        public ObservableCollection<Tip> tipList
+        private ObservableCollection<Quest> _userQuestList;
+        public ObservableCollection<Quest> userQuestList
         {
             get
             {
-                return _tipList;
+                return _userQuestList;
             }
             set
             {
-                _tipList = value;
+                _userQuestList = value;
                 OnPropertyChanged();
             }
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-       /* public async void GetUserquests()
+        public async void GetUserquests()
         {
-         *//*   TipsResult tips = new TipsResult();
+            QuestsResult quest = new QuestsResult();
             try
             {
                 HttpResponseMessage response;
-                response = await client.GetAsync("userQuest");
+                response = await client.GetAsync("userQuests");
                 if (response != null && response.IsSuccessStatusCode == true)
                 {
                     var contents = response.Content.ReadAsStringAsync().Result;
 
-                    tips = JsonConvert.DeserializeObject<TipsResult>(contents);
-                    List<Tip> list = new List<Tip>(tips.tips);
-                    tipList = new ObservableCollection<Tip>(list as List<Tip>);
+                    quest = JsonConvert.DeserializeObject<QuestsResult>(contents);
+
+                    List<Quest> list = new List<Quest>(quest.quests);
+
+                    userQuestList = new ObservableCollection<Quest>(list as List<Quest>);
+                    foreach (Quest elem in userQuestList)
+                    {
+                        Debug.WriteLine(elem.pivot.expire);
+                    }
                 }
             }
             catch (Exception ex)
             {
                 Debug.WriteLine($"Exception quests: {ex}");
-            }*//*
-        }*/
+            }
+        }
 
         void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {

@@ -6,11 +6,35 @@
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
-
-    <StackLayout>
-        <Label
-            HorizontalOptions="Center"
-            Text="MainPage"
-            VerticalOptions="CenterAndExpand" />
-    </StackLayout>
+    <ContentPage.Content>
+        <ListView x:Name="tipListView" ItemsSource="{Binding userQuestList}" RowHeight="90" IsEnabled="False">
+            <ListView.Header>
+                <StackLayout Padding="10,5,0,5">
+                    <Label HorizontalOptions="Center" TextColor="{StaticResource Cblue}"  FontSize="30" Text="Quêtes en cours" />
+                    <Label Padding="10,5,95,5"  TextColor="{StaticResource Cblue}" HorizontalOptions="End" FontSize="20" Text="Date d'expiration" />
+                </StackLayout>
+            </ListView.Header>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid Padding="5">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="30"></RowDefinition>
+                                <RowDefinition Height="40"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="2*"></ColumnDefinition>
+                                <ColumnDefinition Width="1*"></ColumnDefinition>
+                                <ColumnDefinition Width="1*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Row="0" Grid.Column="0" VerticalOptions="Center" Padding="20,0,0,0" TextColor="{StaticResource Cblue}" FontSize="24" Text="{Binding name}"/>
+                            <Label Grid.Row="0" Grid.ColumnSpan="2" Grid.Column="1" VerticalOptions="Center" Padding="20,0,0,0" TextColor="{StaticResource Cblue}" FontSize="16" Text="{Binding pivot.expire}"/>
+                            <Button Grid.Row="1" Padding="20,0,20,0" BackgroundColor="Red" Grid.Column="1" TextColor="White" VerticalOptions="Center" Text="Supprimer"/>
+                            <Button Grid.Row="1" BackgroundColor="Green" Grid.Column="2" TextColor="White" VerticalOptions="Center" Text="Valider"/>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ContentPage.Content>
 </ContentPage>
