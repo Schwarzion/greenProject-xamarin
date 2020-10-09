@@ -57,7 +57,6 @@ namespace GreenProjectMobile.Services
         public async static void logout()
         {
             HttpResponseMessage response = await client.PostAsync("logout", new StringContent("", Encoding.UTF8, "application/json"));
-            Console.WriteLine(response.Content.ReadAsStringAsync().Result);
         }
     }
 }
