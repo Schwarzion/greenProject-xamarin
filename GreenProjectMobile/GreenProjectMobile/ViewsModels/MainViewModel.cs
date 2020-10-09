@@ -49,16 +49,9 @@ namespace GreenProjectMobile.ViewsModels
                 if (response != null && response.IsSuccessStatusCode == true)
                 {
                     var contents = response.Content.ReadAsStringAsync().Result;
-
                     quest = JsonConvert.DeserializeObject<QuestsResult>(contents);
-
                     List<Quest> list = new List<Quest>(quest.quests);
-
                     userQuestList = new ObservableCollection<Quest>(list as List<Quest>);
-                    foreach (Quest elem in userQuestList)
-                    {
-                        Debug.WriteLine(elem.pivot.expire);
-                    }
                 }
             }
             catch (Exception ex)
