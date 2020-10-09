@@ -90,7 +90,11 @@
     <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <AndroidResource Include="Resources\drawable\edit.png" />
+=======
+    <Folder Include="Resources\pictures\" />
+>>>>>>> 88c24c4... Design tips
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\GreenProjectMobile\GreenProjectMobile.csproj">
@@ -99,7 +103,11 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <AndroidResource Include="Resources\drawable\picture1.jpg" />
+=======
+    <AndroidResource Include="Resources\drawable\leaf.png" />
+>>>>>>> 88c24c4... Design tips
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <ProjectExtensions>

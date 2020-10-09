@@ -6,18 +6,23 @@
              mc:Ignorable="d"
              x:Class="GreenProjectMobile.Views.Tips">
     <ContentPage.Content>
-        <ListView x:Name="tipListView" ItemsSource="{Binding tipList}">
+        <ListView x:Name="tipListView" ItemsSource="{Binding tipList}" RowHeight="120" IsEnabled="False">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <Expander>
-                            <Expander.Header>
-                                <Label VerticalOptions="Center" Padding="20,0,0,0" TextColor="{StaticResource Cblue}" FontSize="20" Text="{Binding name}"/>
-                            </Expander.Header>
-                            <Label Grid.Column="1"
-                                Text="Baboons are African and Arabian Old World monkeys belonging to the genus Papio, part of the subfamily Cercopithecinae."
-                                FontAttributes="Italic" />
-                        </Expander>
+                        <Grid Padding="5">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="30"></RowDefinition>
+                                <RowDefinition Height="70"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*"></ColumnDefinition>
+                                <ColumnDefinition Width="6*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Image Grid.RowSpan="2" Grid.Row="0" Grid.Column="0" Source="leaf.jpg" />
+                            <Label Grid.Row="0" Grid.Column="1" VerticalOptions="Center" Padding="20,0,0,0" TextColor="{StaticResource Cblue}" FontSize="24" Text="{Binding name}"/>
+                            <Label Grid.Row="1" Grid.Column="1" VerticalOptions="Center" Padding="20,0,0,0" TextColor="{StaticResource Cblue}" FontSize="20" Text="{Binding desc}"/>
+                        </Grid>
                     </ViewCell>
                 </DataTemplate> 
             </ListView.ItemTemplate> 
