@@ -1,4 +1,5 @@
 ﻿using GreenProjectMobile.Views;
+using GreenProjectMobile.ViewsModels;
 using System;
 using System.ComponentModel;
 using System.IdentityModel.Tokens.Jwt;
@@ -14,9 +15,9 @@ namespace GreenProjectMobile
     {
         public MainPage()
         {
-            Authorization();
-            Console.WriteLine("Here");
             InitializeComponent();
+            Authorization();
+            BindingContext = new MainViewModel();
         }
 
         public async void Authorization()
