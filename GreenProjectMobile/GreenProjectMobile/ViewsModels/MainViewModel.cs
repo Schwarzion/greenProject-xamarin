@@ -18,13 +18,13 @@ namespace GreenProjectMobile.ViewsModels
         public MainViewModel()
         {
             client = HttpClientService.client;
-            GetUserquests();
+            //GetUserquests();
         }
 
         public Tip Tips { get; private set; }
 
-        private ObservableCollection<Quest> _tipList;
-        public ObservableCollection<Quest> tipList
+        private ObservableCollection<Tip> _tipList;
+        public ObservableCollection<Tip> tipList
         {
             get
             {
@@ -39,9 +39,9 @@ namespace GreenProjectMobile.ViewsModels
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public async void GetUserquests()
+       /* public async void GetUserquests()
         {
-         /*   TipsResult tips = new TipsResult();
+         *//*   TipsResult tips = new TipsResult();
             try
             {
                 HttpResponseMessage response;
@@ -58,8 +58,8 @@ namespace GreenProjectMobile.ViewsModels
             catch (Exception ex)
             {
                 Debug.WriteLine($"Exception quests: {ex}");
-            }*/
-        }
+            }*//*
+        }*/
 
         void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
@@ -71,4 +71,4 @@ namespace GreenProjectMobile.ViewsModels
         }
     }
 }
-}
+
