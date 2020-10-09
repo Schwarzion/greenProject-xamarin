@@ -23,16 +23,16 @@ namespace GreenProjectMobile.ViewsModels
 
         public Tip Tips { get; private set; }
 
-        private ObservableCollection<Quest> _userQuestList;
-        public ObservableCollection<Quest> userQuestList
+        private ObservableCollection<Quest> _tipList;
+        public ObservableCollection<Quest> tipList
         {
             get
             {
-                return _userQuestList;
+                return _tipList;
             }
             set
             {
-                _userQuestList = value;
+                _tipList = value;
                 OnPropertyChanged();
             }
         }
@@ -70,4 +70,3 @@ namespace GreenProjectMobile.ViewsModels
         }
     }
 }
-
