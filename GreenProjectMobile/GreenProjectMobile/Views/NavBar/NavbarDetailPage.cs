@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Text;
 using Xamarin.Forms;
 using GreenProjectMobile.Models;
+using System.IdentityModel.Tokens.Jwt;
+using Xamarin.Essentials;
 
 namespace GreenProjectMobile.ViewsModels
 {
@@ -11,16 +13,16 @@ namespace GreenProjectMobile.ViewsModels
     {
         public NavbarDetailPage()
         {
+            Authorization();
             var master = new NavbarPage();
 
             this.Master = master;
 
-            this.Detail = new NavigationPage(new MainPage());
+            this.Detail = new NavigationPage(new AboutPage());
 
             this.MasterBehavior = MasterBehavior.Popover;
 
             master.PageSelected += MasterPageSelected;
-            PresentDetailPage(PageType.AboutPage);
         }
 
         void MasterPageSelected(object sender, PageType e)
@@ -57,6 +59,26 @@ namespace GreenProjectMobile.ViewsModels
             Detail = new NavigationPage(page);
 
             IsPresented = false;
+        }
+
+        public async void Authorization()
+        {
+            string oauthToken = await SecureStorage.GetAsync("Token");
+            if (String.IsNullOrEmpty(oauthToken))
+            {
+                await Navigation.PushModalAsync(new NavigationPage(new LoginView()));
+            }
+            else
+            {
+                var handler = new JwtSecurityTokenHandler();
+                var jsonToken = handler.ReadToken(oauthToken);
+                DateTime utcDate = DateTime.UtcNow;
+                if (utcDate > jsonToken.ValidTo)
+                {
+                    SecureStorage.Remove("Token");
+                    await Navigation.PushModalAsync(new NavigationPage(new LoginView()));
+                }
+            }
         }
     }
 }

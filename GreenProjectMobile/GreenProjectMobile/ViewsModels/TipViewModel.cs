@@ -67,5 +67,7 @@ namespace GreenProjectMobile.ViewsModels
                 handler(this, new PropertyChangedEventArgs(propertyName));
             }
         }
+
+        
     }
 }
