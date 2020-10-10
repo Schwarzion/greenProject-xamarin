@@ -15,30 +15,8 @@ namespace GreenProjectMobile
     {
         public MainPage()
         {
-            Authorization();
             InitializeComponent();
             BindingContext = new MainViewModel();
-        }
-
-        public async void Authorization()
-        {
-            string oauthToken = await SecureStorage.GetAsync("Token");
-            if (String.IsNullOrEmpty(oauthToken))
-            {
-                await Navigation.PushModalAsync(new NavigationPage(new LoginView()));
-            }
-            else
-            {
-                Console.WriteLine("Main");
-                var handler = new JwtSecurityTokenHandler();
-                var jsonToken = handler.ReadToken(oauthToken);
-                DateTime utcDate = DateTime.UtcNow;
-                if (utcDate > jsonToken.ValidTo)
-                {
-                    SecureStorage.Remove("Token");
-                    await Navigation.PushModalAsync(new NavigationPage(new LoginView()));
-                }
-            }
         }
     }
 }
