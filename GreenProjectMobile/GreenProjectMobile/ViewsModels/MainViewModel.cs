@@ -6,19 +6,45 @@ using System.Diagnostics;
 using System.Net.Http;
 using System.Runtime.CompilerServices;
 using System.Text;
+using System.Windows.Input;
 using GreenProjectMobile.Models;
 using GreenProjectMobile.Services;
 using Newtonsoft.Json;
+using Xamarin.Forms;
 
 namespace GreenProjectMobile.ViewsModels
 {
     class MainViewModel : INotifyPropertyChanged
     {
         readonly HttpClient client;
+
+        public ICommand validateQuest { protected set; get; }
+        public ICommand removeQuest { protected set; get; }
+
         public MainViewModel()
         {
             client = HttpClientService.client;
             GetUserquests();
+            validateQuest = new Command(OnValidate);
+            removeQuest = new Command(OnRemove);
+        }
+
+        public void OnRemove()
+        {
+            Debug.WriteLine("Remove");
+
+            /*string url = "removeQuest" + "/1";
+            HttpResponseMessage response = await client.GetAsync(url);
+            if (response != null && response.IsSuccessStatusCode == true)
+            {
+                var contents = response.Content.ReadAsStringAsync().Result;
+                Debug.WriteLine(contents);
+            }*/
+        }
+
+        public void OnValidate()
+        {
+            Debug.WriteLine("Validate");
         }
 
         public Tip Tips { get; private set; }
@@ -59,6 +85,8 @@ namespace GreenProjectMobile.ViewsModels
                 Debug.WriteLine($"Exception quests: {ex}");
             }
         }
+
+
 
         void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
