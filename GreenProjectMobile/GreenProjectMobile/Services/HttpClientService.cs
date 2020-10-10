@@ -4,6 +4,7 @@ using System.Text;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using Xamarin.Essentials;
+using Java.Nio.Channels;
 
 namespace GreenProjectMobile.Services
 {
@@ -43,6 +44,7 @@ namespace GreenProjectMobile.Services
                 {
                     BaseAddress = new Uri(Constants.Constants.BaseUrl)
                 };
+            setToken();
         }
 
         public async static void setToken()
@@ -50,6 +52,22 @@ namespace GreenProjectMobile.Services
             string authToken = await SecureStorage.GetAsync("Token");
             if (!String.IsNullOrEmpty(authToken))
                 token = authToken;
+        }
+
+        public async static void logout()
+        {
+            HttpResponseMessage response = await client.PostAsync("logout", new StringContent("", Encoding.UTF8, "application/json"));
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+            Console.WriteLine(response.Content.ReadAsStringAsync().Result);
+>>>>>>> ac460c6... Logout on API
+=======
+            Console.WriteLine(response.Content.ReadAsStringAsync().Result);
+>>>>>>> cd66e51... Logout on API
+=======
+>>>>>>> 88c24c4... Design tips
         }
     }
 }

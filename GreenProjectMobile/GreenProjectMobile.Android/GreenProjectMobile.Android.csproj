@@ -91,6 +91,7 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\edit.png" />
+    <Folder Include="Resources\pictures\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\GreenProjectMobile\GreenProjectMobile.csproj">
@@ -100,6 +101,7 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\picture1.jpg" />
+    <AndroidResource Include="Resources\drawable\leaf.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <ProjectExtensions>

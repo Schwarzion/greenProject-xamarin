@@ -8,7 +8,6 @@ namespace GreenProjectMobile.Models
     {
         LoginView,
         MainPage,
-        // RegisterPage,
         AboutPage,
         ProfileView,
         Tips
