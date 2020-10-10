@@ -3,16 +3,11 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Collections.Specialized;
-using System.Text;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Net.Http;
 using System.Net.Http.Headers;
-using System.Threading.Tasks;
 using Xamarin.Essentials;
-using Xamarin.Forms;
-using GreenProjectMobile.Views;
 using System.Runtime.CompilerServices;
 using System.Linq;
 
@@ -60,11 +55,9 @@ namespace GreenProjectMobile.ViewsModels
                 {
                     var contents = response.Content.ReadAsStringAsync().Result;
                     quests = JsonConvert.DeserializeObject<QuestsResult>(contents);
-                    List<Quest> list = new List<Quest>(quests.quests);
+                    List<Quest> list = new List<Quest>(quests.quests).Where(w => w.questStatus.Equals(1)).ToList();
 
-                    //Filtrer la liste de quêtes sur status == 1 && minLvl < user.lvl
-                    questList = new ObservableCollection<Quest>(list as List<Quest>);
-                    
+                    questList = new ObservableCollection<Quest>(list);
                 }
             }
             catch (Exception ex)
@@ -87,36 +80,5 @@ namespace GreenProjectMobile.ViewsModels
             get;
             set;
         }
-
-        //public async Task<ObservableCollection<Quest>> GetQuestsRequest()
-        //{
-
-        //    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", await SecureStorage.GetAsync("Token"));
-        //    string uri = Constants.Constants.BaseUrl + "allQuests";
-        //    HttpResponseMessage response = null;
-        //    QuestsResult quests = new QuestsResult();
-        //    List<Quest> list = new List<Quest>();
-        //    try
-        //    {
-        //        response = await client.GetAsync(uri);
-        //        if (response != null && response.IsSuccessStatusCode == true)
-        //        {
-        //            var contents = response.Content.ReadAsStringAsync().Result;
-        //            quests = JsonConvert.DeserializeObject<QuestsResult>(contents);
-        //            list = quests.quests;
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        Debug.WriteLine($"Exception Quests in GetQuestsRequest : {ex}");
-        //    }
-        //    ObservableCollection<Quest> obsList = new ObservableCollection<Quest>(list as List<Quest>);
-        //    foreach (Quest elem in obsList)
-        //    {
-        //        Debug.WriteLine("DEBUG elem.name : " + elem.name);
-        //    }
-        //    return obsList;
-        //}
-
     }
 }
