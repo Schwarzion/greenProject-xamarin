@@ -32,6 +32,12 @@ namespace GreenProjectMobile.Models
         public string msg { get; set; }
     }
 
+    public class AcceptQuestResult
+    {
+        public int status { get; set; }
+        public string msg { get; set; }
+    }
+
     public class Pivot
     {
         public int userId { get; set; }

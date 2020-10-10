@@ -25,8 +25,8 @@ namespace GreenProjectMobile.ViewsModels
         {
             client = new HttpClient();
             SubmitCommand = new Command(OnSubmit);
-            email = "test@mail.com";
-            password = "password";
+            email = "tototest@mail.com";
+            password = "motdepasse";
         }
         public ICommand SubmitCommand { protected set; get; }
         private string email;
@@ -82,7 +82,6 @@ namespace GreenProjectMobile.ViewsModels
                 await Application.Current.MainPage.Navigation.PopModalAsync();
             }
         }
-
 
         public async Task<TokenModel> LoginRequest(string path, string json)
         {

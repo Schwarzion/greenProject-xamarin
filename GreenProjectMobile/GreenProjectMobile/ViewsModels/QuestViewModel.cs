@@ -14,6 +14,7 @@ using Xamarin.Essentials;
 using Xamarin.Forms;
 using GreenProjectMobile.Views;
 using System.Runtime.CompilerServices;
+using System.Linq;
 
 namespace GreenProjectMobile.ViewsModels
 {
@@ -58,16 +59,12 @@ namespace GreenProjectMobile.ViewsModels
                 if (response != null && response.IsSuccessStatusCode == true)
                 {
                     var contents = response.Content.ReadAsStringAsync().Result;
-                    Debug.WriteLine("DEBUG contents : " + contents);
                     quests = JsonConvert.DeserializeObject<QuestsResult>(contents);
-                    Debug.WriteLine("DEBUG quests : " + quests);
                     List<Quest> list = new List<Quest>(quests.quests);
-                    Debug.WriteLine("DEBUG list : " + list);
+
+                    //Filtrer la liste de quêtes sur status == 1 && minLvl < user.lvl
                     questList = new ObservableCollection<Quest>(list as List<Quest>);
-                    foreach (Quest elem in questList)
-                    {
-                        Debug.WriteLine("DEBUG elem " + elem);
-                    }
+                    
                 }
             }
             catch (Exception ex)
