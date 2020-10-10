@@ -1,4 +1,5 @@
 ﻿using GreenProjectMobile.Models.ProfileModels;
+using GreenProjectMobile.Services;
 using GreenProjectMobile.Views;
 using Newtonsoft.Json;
 using System;
@@ -25,7 +26,7 @@ namespace GreenProjectMobile.ViewsModels
 
         public ProfileViewModel()
         {
-            client = new HttpClient();
+            client = HttpClientService.client;
             SubmitCommand = new Command(UpdateProfile);
             getProfile();
         }
@@ -136,13 +137,11 @@ namespace GreenProjectMobile.ViewsModels
 
         public async void getProfile()
         {
-            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", await SecureStorage.GetAsync("Token"));
-            string uri = Constants.Constants.BaseUrl + "profile";
             HttpResponseMessage response = null;
 
             try
             {
-                response = await client.GetAsync(uri);
+                response = await client.GetAsync("profile");
                 if (response != null && response.IsSuccessStatusCode == true)
                 {
                     var contents = response.Content.ReadAsStringAsync().Result;
