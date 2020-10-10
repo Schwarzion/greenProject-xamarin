@@ -1,4 +1,5 @@
 ﻿using GreenProjectMobile.ViewsModels;
+using GreenProjectMobile.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,6 +8,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using GreenProjectMobile.Models.ProfileModels;
 
 namespace GreenProjectMobile.Views
 {
@@ -15,13 +17,11 @@ namespace GreenProjectMobile.Views
     {
         public ProfileView()
         {
-            var vm = new ProfileViewModel();
-            this.BindingContext = vm;
+            ProfileViewModel vm = new ProfileViewModel();
+            vm.getProfile();
+            ProfileModel prifile = vm.Profile;
+            BindingContext = vm;
             InitializeComponent();
-        }
-        void UpdateProfile(object sender, EventArgs e)
-        {
-            Navigation.PushModalAsync(new NavbarDetailPage());
         }
     }
 }

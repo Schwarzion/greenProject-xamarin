@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="GreenProjectMobile.Views.UpdateView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <NavigationPage.TitleView>
+        <StackLayout>
+            <Label
+                Margin="0,0,75,0"
+                FontSize="20"
+                HorizontalTextAlignment="Center"
+                Text="Inscription"
+                TextColor="White" />
+        </StackLayout>
+    </NavigationPage.TitleView>
+    <ContentPage.Content>
+        <ScrollView>
+            <ScrollView.Content>
+                <StackLayout Padding="10">
+                    <Label Text="Email" />
+                    <Entry
+                        x:Name="email"
+                        Placeholder="Email"
+                        Text="{Binding Email}" />
+                    <Label Text="Prénom" />
+                    <Entry
+                        x:Name="firstName"
+                        Placeholder="Prénom"
+                        Text="{Binding FirstName}" />
+                    <Label Text="Nom" />
+                    <Entry
+                        x:Name="lastName"
+                        Placeholder="Nom"
+                        Text="{Binding LastName}" />
+                    <Label Text="Pseudo" />
+                    <Entry
+                        x:Name="alias"
+                        Placeholder="Pseudo"
+                        Text="{Binding Alias}" />
+
+                    <Label Text="Sexe" />
+                    <Picker
+                        x:Name="sexe"
+                        Title="Choisissez votre sexe"
+                        ItemsSource="{Binding Sexes}"
+                        SelectedItem="{Binding SelectedSex}" />
+
+                    <Label Text="Adresse" />
+                    <Entry
+                        x:Name="address"
+                        Placeholder="Adresse"
+                        Text="{Binding Address}" />
+                    <Label Text="Ville" />
+                    <Entry
+                        x:Name="city"
+                        Placeholder="Ville"
+                        Text="{Binding City}" />
+                    <Label Text="Code postal" />
+                    <Entry
+                        x:Name="postalCode"
+                        Placeholder="Code postal"
+                        Text="{Binding PostalCode}" />
+                    <Label Text="Téléphone" />
+                    <Entry
+                        x:Name="phone"
+                        Placeholder="Téléphone"
+                        Text="{Binding Phone}" />
+                    <Button
+                        x:Name="btnRegister"
+                        Margin="110,0,110,0"
+                        BackgroundColor="{StaticResource Cblue}"
+                        Command="{Binding UpdateCommand}"
+                        FontSize="12"
+                        Text="Valider !"
+                        TextColor="White" />
+                </StackLayout>
+            </ScrollView.Content>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

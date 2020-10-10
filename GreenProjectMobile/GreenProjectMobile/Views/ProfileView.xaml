@@ -9,13 +9,10 @@
     mc:Ignorable="d">
     <ContentPage.Resources>
         <ResourceDictionary>
-            <Color x:Key="colorBox">#0E7C7B</Color>
-            <Color x:Key="colorLabel">#51CB40</Color>
-            <Color x:Key="colorBackround">#17BEBB</Color>
             <Style x:Key="ProfileData" TargetType="BoxView">
                 <Setter Property="HeightRequest" Value="10" />
                 <Setter Property="HorizontalOptions" Value="FillAndExpand" />
-                <Setter Property="Color" Value="green" />
+                <Setter Property="Color" Value="{StaticResource Cgreen}" />
                 <Setter Property="Margin" Value="0, 5, 0, 5" />
                 <Setter Property="Opacity" Value="0.3" />
             </Style>
@@ -24,7 +21,7 @@
                 <Setter Property="FontAttributes" Value="Bold" />
                 <Setter Property="FontSize" Value="10" />
                 <Setter Property="HorizontalOptions" Value="Center" />
-                <Setter Property="TextColor" Value="{StaticResource colorLabel}" />
+                <Setter Property="TextColor" Value="{StaticResource Cgreen}" />
                 <Setter Property="VerticalOptions" Value="Center" />
             </Style>
             <Style x:Key="DatasStyle" TargetType="Label">
@@ -63,14 +60,14 @@
                                     FontSize="50"
                                     HorizontalOptions="Center"
                                     Text="{Binding Profile.level}"
-                                    TextColor="{StaticResource colorBackround}"
+                                    TextColor="{StaticResource ClightBlue}"
                                     VerticalOptions="Center" />
                                 <Label
                                     Grid.Row="2"
                                     FontAttributes="Bold"
                                     HorizontalOptions="Center"
                                     Text="lvl"
-                                    TextColor="{StaticResource colorBackround}"
+                                    TextColor="{StaticResource ClightBlue}"
                                     VerticalOptions="End" />
                             </Grid>
                         </Frame>
@@ -80,7 +77,7 @@
                             Grid.Column="1"
                             Grid.ColumnSpan="1"
                             Padding="0"
-                            BackgroundColor="{StaticResource colorBackround}"
+                            BackgroundColor="{StaticResource ClightBlue}"
                             BorderColor="black"
                             CornerRadius="60"
                             HasShadow="False"
@@ -95,21 +92,23 @@
                                 <Label
                                     Grid.Row="0"
                                     Grid.Column="0"
+                                    FontAttributes="Bold"
+                                    FontSize="Medium"
                                     Style="{StaticResource DatasStyle}"
                                     Text="{Binding Sexe}"
-                                    TextColor="{StaticResource colorBackround}" />
+                                    TextColor="{StaticResource ClightBlue}" />
                                 <Label
                                     Grid.Row="1"
                                     Grid.Column="0"
                                     Style="{StaticResource DatasStyle}"
                                     Text="{Binding Profile.exp}"
-                                    TextColor="{StaticResource colorBackround}" />
+                                    TextColor="{StaticResource ClightBlue}" />
                                 <Label
                                     Grid.Row="2"
                                     Grid.Column="0"
                                     Style="{StaticResource DatasStyle}"
                                     Text="Exp"
-                                    TextColor="{StaticResource colorBackround}" />
+                                    TextColor="{StaticResource ClightBlue}" />
                             </Grid>
                         </Frame>
 
@@ -137,11 +136,11 @@
                                     FontSize="30"
                                     Style="{StaticResource LabelsStyle}"
                                     Text="{Binding Profile.alias}"
-                                    TextColor="{StaticResource colorBackround}" />
+                                    TextColor="{StaticResource ClightBlue}" />
                                 <ImageButton
                                     Grid.Row="0"
                                     Grid.Column="1"
-                                    Clicked="UpdateProfile"
+                                    Command="{Binding SubmitCommand}"
                                     Source="edit.png"
                                     WidthRequest="10" />
                             </Grid>
