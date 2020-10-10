@@ -24,6 +24,7 @@ namespace GreenProjectMobile.ViewsModels
         public MainViewModel()
         {
             client = HttpClientService.client;
+            Console.WriteLine("MainViewModel");
             GetUserquests();
             validateQuest = new Command(OnValidate);
             removeQuest = new Command(OnRemove);
@@ -31,7 +32,7 @@ namespace GreenProjectMobile.ViewsModels
 
         public void OnRemove()
         {
-            Debug.WriteLine("Remove");
+            Console.WriteLine("Remove");
 
             /*string url = "removeQuest" + "/1";
             HttpResponseMessage response = await client.GetAsync(url);
@@ -44,7 +45,7 @@ namespace GreenProjectMobile.ViewsModels
 
         public void OnValidate()
         {
-            Debug.WriteLine("Validate");
+            Console.WriteLine("Validate");
         }
 
         public Tip Tips { get; private set; }
@@ -72,6 +73,7 @@ namespace GreenProjectMobile.ViewsModels
             {
                 HttpResponseMessage response;
                 response = await client.GetAsync("userQuests");
+                Console.WriteLine("Test");
                 if (response != null && response.IsSuccessStatusCode == true)
                 {
                     var contents = response.Content.ReadAsStringAsync().Result;
