@@ -15,19 +15,8 @@ namespace GreenProjectMobile
     {
         public MainPage()
         {
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
             Authorization();
-            Console.WriteLine("Here");
-<<<<<<< HEAD
->>>>>>> ac460c6... Logout on API
-=======
->>>>>>> cd66e51... Logout on API
-=======
->>>>>>> 7b8dd55... [Design] MainPage Design
             InitializeComponent();
-            Authorization();
             BindingContext = new MainViewModel();
         }
 
@@ -40,6 +29,7 @@ namespace GreenProjectMobile
             }
             else
             {
+                Console.WriteLine("Main");
                 var handler = new JwtSecurityTokenHandler();
                 var jsonToken = handler.ReadToken(oauthToken);
                 DateTime utcDate = DateTime.UtcNow;

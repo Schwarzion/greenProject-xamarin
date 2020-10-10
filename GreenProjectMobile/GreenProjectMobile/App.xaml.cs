@@ -8,6 +8,8 @@ using System.Diagnostics;
 using System.Threading.Tasks;
 using GreenProjectMobile.Services;
 using Xamarin.Forms.PlatformConfiguration.AndroidSpecific;
+using System.Net;
+using System.IdentityModel.Tokens.Jwt;
 
 namespace GreenProjectMobile
 {
@@ -18,9 +20,7 @@ namespace GreenProjectMobile
         {
             InitializeComponent();
             OnStart();
-            
             MainPage = new NavbarDetailPage();
-
             Current.On<Xamarin.Forms.PlatformConfiguration.Android>().UseWindowSoftInputModeAdjust(WindowSoftInputModeAdjust.Resize);
         }
 
