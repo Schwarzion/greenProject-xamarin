@@ -15,7 +15,7 @@ namespace GreenProjectMobile.ViewsModels
 
             this.Master = master;
 
-            this.Detail = new NavigationPage(new DetailPage());
+            this.Detail = new NavigationPage(new AboutPage());
 
             this.MasterBehavior = MasterBehavior.Popover;
 
