@@ -19,7 +19,7 @@
             <Style x:Key="LabelsStyle" TargetType="Label">
                 <Setter Property="Margin" Value="5,20,0,0" />
                 <Setter Property="FontAttributes" Value="Bold" />
-                <Setter Property="FontSize" Value="10" />
+                <Setter Property="FontSize" Value="Small" />
                 <Setter Property="HorizontalOptions" Value="Center" />
                 <Setter Property="TextColor" Value="{StaticResource Cgreen}" />
                 <Setter Property="VerticalOptions" Value="Center" />
@@ -93,7 +93,7 @@
                                     Grid.Row="0"
                                     Grid.Column="0"
                                     FontAttributes="Bold"
-                                    FontSize="Medium"
+                                    FontSize="Small"
                                     Style="{StaticResource DatasStyle}"
                                     Text="{Binding Sexe}"
                                     TextColor="{StaticResource ClightBlue}" />

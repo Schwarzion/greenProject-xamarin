@@ -5,8 +5,15 @@ namespace GreenProjectMobile.Models.AuthenticationModels
     public class UpdateResponseModel
     {
         public int status { get; set; }
-        public User user { get; set; }
+        public User msgs { get; set; }
         public string msg { get; set; }
+        //public User msgs { get; set; }
+
+
+        public string getError()
+        {
+            return msg;
+        }
     }
     public class User
     {

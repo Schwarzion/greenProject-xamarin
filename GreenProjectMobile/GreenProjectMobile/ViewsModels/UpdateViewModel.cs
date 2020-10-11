@@ -120,8 +120,8 @@ namespace GreenProjectMobile.ViewsModels
         public string Alias
         {
             get { return alias; }
-            set 
-            { 
+            set
+            {
                 alias = value;
                 OnPropertyChanged();
             }
@@ -154,7 +154,7 @@ namespace GreenProjectMobile.ViewsModels
         {
             get { return city; }
             set
-            { 
+            {
                 city = value;
                 OnPropertyChanged();
             }
@@ -241,7 +241,6 @@ namespace GreenProjectMobile.ViewsModels
             {
                 await Application.Current.MainPage.DisplayAlert("Erreur connexion", "La connexion au serveur a échouée.", "Ok");
             }
-
             if (response != null && response.IsSuccessStatusCode == true)
             {
                 var result = await response.Content.ReadAsStringAsync();
@@ -252,13 +251,20 @@ namespace GreenProjectMobile.ViewsModels
                 string errorMessage = "";
                 var result = await response.Content.ReadAsStringAsync();
                 UpdateResponseModel Errors = JsonConvert.DeserializeObject<UpdateResponseModel>(result);
-                List<List<string>> errorsList = Errors.user.getAllErrors();
-
-                foreach (List<string> error in errorsList)
+                if (Errors.status == 403)
                 {
-                    if (error != null)
+                    errorMessage = Errors.getError();
+                }
+                else
+                {
+                    List<List<string>> errorsList = Errors.msgs.getAllErrors();
+
+                    foreach (List<string> error in errorsList)
                     {
-                        errorMessage = errorMessage + error[0] + Environment.NewLine;
+                        if (error != null)
+                        {
+                            errorMessage = errorMessage + error[0] + Environment.NewLine;
+                        }
                     }
                 }
 
