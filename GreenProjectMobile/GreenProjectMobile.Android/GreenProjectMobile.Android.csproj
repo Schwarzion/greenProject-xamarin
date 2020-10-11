@@ -91,7 +91,6 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\edit.png" />
-    <Folder Include="Resources\pictures\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\GreenProjectMobile\GreenProjectMobile.csproj">
@@ -103,10 +102,22 @@
     <AndroidResource Include="Resources\drawable\picture1.jpg" />
     <AndroidResource Include="Resources\drawable\leaf.png" />
   </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\greenup_logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\greenup_logo_bleu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\greenup_logo_bleu_clair.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\pictures\" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties XamarinHotReloadDebuggerTimeoutExceptionGreenProjectMobileAndroidHideInfoBar="True" XamarinHotReloadDebuggerExceptionGreenProjectMobileAndroidHideInfoBar="True" />
+      <UserProperties XamarinHotReloadDebuggerExceptionGreenProjectMobileAndroidHideInfoBar="True" XamarinHotReloadDebuggerTimeoutExceptionGreenProjectMobileAndroidHideInfoBar="True" />
     </VisualStudio>
   </ProjectExtensions>
 </Project>

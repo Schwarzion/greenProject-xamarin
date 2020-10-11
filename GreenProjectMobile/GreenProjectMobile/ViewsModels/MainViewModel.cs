@@ -32,7 +32,6 @@ namespace GreenProjectMobile.ViewsModels
         public async void OnRemove(int id)
         {
             string url = "removeQuest" + "/" + id;
-            Console.WriteLine(url);
             HttpResponseMessage response = await client.PostAsync(url, new StringContent("", Encoding.UTF8, "application/json"));
             if (response != null && response.IsSuccessStatusCode == true)
             {

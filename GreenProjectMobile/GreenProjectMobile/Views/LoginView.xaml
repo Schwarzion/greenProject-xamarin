@@ -7,7 +7,8 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"  BackgroundColor="{StaticResource Cblue}">
     <ContentPage.Content>
-        <StackLayout VerticalOptions="Center" Orientation="Vertical" Spacing="80">
+        <StackLayout  VerticalOptions="StartAndExpand" Orientation="Vertical" Spacing="80">
+            <Image HeightRequest="140" HorizontalOptions="Center" Source="greenup_logo.png"></Image>
             <Entry
                         x:Name="Email"
                         HorizontalOptions="CenterAndExpand"
