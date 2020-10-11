@@ -3,14 +3,12 @@ using GreenProjectMobile.Models.AuthenticationModels;
 using Newtonsoft.Json;
 using System;
 using System.ComponentModel;
-using System.Diagnostics;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Essentials;
 using Xamarin.Forms;
-using GreenProjectMobile.Views;
 using System.IdentityModel.Tokens.Jwt;
 using GreenProjectMobile.Services;
 
@@ -25,8 +23,8 @@ namespace GreenProjectMobile.ViewsModels
         {
             client = new HttpClient();
             SubmitCommand = new Command(OnSubmit);
-            email = "tototest@mail.com";
-            password = "motdepasse";
+            email = "test@mail.com";
+            password = "password";
         }
         public ICommand SubmitCommand { protected set; get; }
         private string email;
