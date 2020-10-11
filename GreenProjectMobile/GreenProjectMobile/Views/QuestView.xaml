@@ -5,9 +5,14 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="GreenProjectMobile.Views.Quests">
-    <ContentPage.Content>
+    
+    <NavigationPage.TitleView>
         <StackLayout>
-            <Label Text="Liste des quêtes"/>
+            <Label Text="Quêtes disponibles" TextColor="White" HorizontalTextAlignment="Center" FontSize="20" Margin="0, 0, 75, 0" />
+        </StackLayout>
+    </NavigationPage.TitleView>
+
+    <ContentPage.Content>
             <ListView 
                 x:Name="questListView" 
                 ItemsSource="{Binding questList}" 
@@ -15,15 +20,32 @@
                 VerticalOptions="FillAndExpand" 
                 CachingStrategy="RecycleElement" 
                 ItemSelected="Handle_ItemSelected"
+                RowHeight="120"
              >
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <Label WidthRequest="50" HeightRequest="200" VerticalOptions="Center" HorizontalOptions="Center" FontSize="20" Text="{Binding name}"/>
+                            <Label VerticalOptions="Center" HorizontalOptions="Center" FontSize="20" Text="{Binding name}"/>
+
+                            <Grid Padding="10">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"></RowDefinition>
+                                    <RowDefinition Height="*"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="2*"></ColumnDefinition>
+                                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.RowSpan="2" Grid.Row="0" Grid.Column="0" VerticalOptions="Center" FontSize="24" Text="{Binding name}" TextColor="{StaticResource Cblue}" />
+                                <Label Grid.Row="0" Grid.Column="1"  VerticalOptions="Center" Padding="20,0,0,0" TextColor="{StaticResource Cblue}" FontSize="20" Text="Niveau:"/>
+                                <Label Grid.Row="0" Grid.Column="2" HorizontalOptions="End" VerticalOptions="Center" Padding="20,0,0,0" TextColor="{StaticResource Cblue}" FontSize="20" Text="{Binding minLevel}"/>
+                                <Label Grid.Row="1" Grid.Column="1"  VerticalOptions="Center" Padding="20,0,0,0" TextColor="{StaticResource Cblue}" FontSize="20" Text="Exp:"/>
+                                <Label Grid.Row="1" Grid.Column="2" HorizontalOptions="End" VerticalOptions="Center" Padding="20,0,0,0" TextColor="{StaticResource Cblue}" FontSize="20" Text="{Binding expAmount}"/>
+                            </Grid>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-        </StackLayout>
     </ContentPage.Content>
 </ContentPage>
