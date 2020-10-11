@@ -29,6 +29,7 @@ namespace GreenProjectMobile.ViewsModels
 
         void PresentDetailPage(PageType pageType)
         {
+            Authorization();
             Page page;
 
             switch (pageType)
@@ -52,9 +53,7 @@ namespace GreenProjectMobile.ViewsModels
                     page = new MainPage();
                     break;
             }
-
             Detail = new NavigationPage(page);
-
             IsPresented = false;
         }
     }
