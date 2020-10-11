@@ -18,34 +18,33 @@ namespace GreenProjectMobile.ViewsModels
     {
         readonly HttpClient client;
 
-        public ICommand validateQuest { protected set; get; }
-        public ICommand removeQuest { protected set; get; }
+        public ICommand validateQuest { get; set; }
+        public ICommand removeQuest { get; set; }
 
         public MainViewModel()
         {
             client = HttpClientService.client;
-            Console.WriteLine("MainViewModel");
             GetUserquests();
-            validateQuest = new Command(OnValidate);
-            removeQuest = new Command(OnRemove);
+            validateQuest = new Command<int>(OnValidate);
+            removeQuest = new Command<int>(OnRemove);
         }
 
-        public void OnRemove()
+        public async void OnRemove(int id)
         {
-            Console.WriteLine("Remove");
-
-            /*string url = "removeQuest" + "/1";
-            HttpResponseMessage response = await client.GetAsync(url);
+            string url = "removeQuest" + "/" + id;
+            Console.WriteLine(url);
+            HttpResponseMessage response = await client.PostAsync(url, new StringContent("", Encoding.UTF8, "application/json"));
             if (response != null && response.IsSuccessStatusCode == true)
             {
                 var contents = response.Content.ReadAsStringAsync().Result;
                 Debug.WriteLine(contents);
-            }*/
+                GetUserquests();
+            }
         }
 
-        public void OnValidate()
+        public void OnValidate(int id)
         {
-            Console.WriteLine("Validate");
+            Console.WriteLine(id);
         }
 
         public Tip Tips { get; private set; }
@@ -73,7 +72,6 @@ namespace GreenProjectMobile.ViewsModels
             {
                 HttpResponseMessage response;
                 response = await client.GetAsync("userQuests");
-                Console.WriteLine("Test");
                 if (response != null && response.IsSuccessStatusCode == true)
                 {
                     var contents = response.Content.ReadAsStringAsync().Result;
