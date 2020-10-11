@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -29,6 +29,12 @@ namespace GreenProjectMobile.Models
     {
         public int status { get; set; }
         public List<Quest> quests { get; set; }
+        public string msg { get; set; }
+    }
+
+    public class AcceptQuestResult
+    {
+        public int status { get; set; }
         public string msg { get; set; }
     }
 

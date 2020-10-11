@@ -3,14 +3,12 @@ using GreenProjectMobile.Models.AuthenticationModels;
 using Newtonsoft.Json;
 using System;
 using System.ComponentModel;
-using System.Diagnostics;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Essentials;
 using Xamarin.Forms;
-using GreenProjectMobile.Views;
 using System.IdentityModel.Tokens.Jwt;
 using GreenProjectMobile.Services;
 
@@ -82,7 +80,6 @@ namespace GreenProjectMobile.ViewsModels
                 await Application.Current.MainPage.Navigation.PopModalAsync();
             }
         }
-
 
         public async Task<TokenModel> LoginRequest(string path, string json)
         {

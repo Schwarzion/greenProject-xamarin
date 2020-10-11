@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GreenProjectMobile.Views.QuestDetailView">
+    <ContentPage.Content>
+        <Grid Padding="15">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="0.5*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Label Text="{x:Binding Quest.name}" Grid.Row="0" Grid.ColumnSpan="5" HorizontalOptions="Center" VerticalOptions="Center" FontSize="Title" TextColor="Black" FontAttributes="Bold"></Label>
+            <Label Text="{x:Binding Quest.desc}" Grid.Row="1" Grid.ColumnSpan="5" HorizontalOptions="Center" VerticalOptions="Center" TextColor="Black"></Label>
+            <Label Text="Expérience" Grid.Column="0" Grid.Row="2" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" TextColor="Black"></Label>
+            <Label Text="{x:Binding Quest.expAmount}" Grid.Column="1" Grid.Row="2" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" TextColor="Black" FontAttributes="Bold"></Label>
+            <Label Text="Niveau requis" Grid.Column="3" Grid.Row="2" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" TextColor="Black"></Label>
+            <Label Text="{x:Binding Quest.minLevel}" Grid.Column="4" Grid.Row="2" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" TextColor="Black" FontAttributes="Bold"></Label>
+            <Button 
+                Text="Accepter"
+                Command="{Binding AddQuestCommand}"    
+                Grid.Column="0" 
+                Grid.ColumnSpan="5"  
+                Grid.Row="3" 
+                HorizontalOptions="FillAndExpand" 
+                VerticalOptions="Center" 
+                TextColor="White" 
+                BackgroundColor="Green">
+            </Button>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

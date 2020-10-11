@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="GreenProjectMobile.Views.Quests">
+    
+    <NavigationPage.TitleView>
+        <StackLayout>
+            <Label Text="Quêtes disponibles" TextColor="White" HorizontalTextAlignment="Center" FontSize="20" Margin="0, 0, 75, 0" />
+        </StackLayout>
+    </NavigationPage.TitleView>
+
+    <ContentPage.Content>
+            <ListView 
+                x:Name="questListView" 
+                ItemsSource="{Binding questList}" 
+                SelectedItem="{Binding selectedQuest}" 
+                VerticalOptions="FillAndExpand" 
+                CachingStrategy="RecycleElement" 
+                ItemSelected="Handle_ItemSelected"
+                RowHeight="120"
+             >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid Padding="10">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="30"></RowDefinition>
+                                    <RowDefinition Height="70"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Image Grid.RowSpan="2" Grid.Row="0" Grid.Column="0" WidthRequest="5" Source="greenupicon.png" />
+                                <Label Grid.Row="0" Grid.Column="2"  Grid.ColumnSpan="3" HorizontalOptions="Center" FontSize="24" FontAttributes="Bold" Text="{Binding name}" TextColor="{StaticResource Cblue}" />
+                                <Label Grid.Row="1" Grid.Column="2"  VerticalOptions="Center" TextColor="{StaticResource Cblue}" FontSize="16" Text="Niveau:"/>
+                                <Label Grid.Row="1" Grid.Column="3"  VerticalOptions="Center" HorizontalOptions="Start" TextColor="{StaticResource Cblue}" FontSize="16" Text="{Binding minLevel}"/>
+                                <Label Grid.Row="1" Grid.Column="4"  VerticalOptions="Center" TextColor="{StaticResource Cblue}" FontSize="16" Text="Exp:"/>
+                                <Label Grid.Row="1" Grid.Column="5"  VerticalOptions="Center" TextColor="{StaticResource Cblue}" FontSize="16" Text="{Binding expAmount}"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+    </ContentPage.Content>
+</ContentPage>

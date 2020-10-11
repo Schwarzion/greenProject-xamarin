@@ -1,4 +1,4 @@
-﻿using GreenProjectMobile.Views;
+using GreenProjectMobile.Views;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -51,6 +51,9 @@ namespace GreenProjectMobile.ViewsModels
                     break;
                 case PageType.AboutPage:
                     page = new AboutPage();
+                    break;
+                case PageType.AllQuestView:
+                    page = new Quests();
                     break;
                 default:
                     page = new MainPage();

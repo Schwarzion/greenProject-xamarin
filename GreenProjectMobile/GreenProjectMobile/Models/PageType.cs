@@ -10,6 +10,7 @@ namespace GreenProjectMobile.Models
         MainPage,
         AboutPage,
         ProfileView,
-        Tips
+        Tips,
+        AllQuestView
     }
 }
