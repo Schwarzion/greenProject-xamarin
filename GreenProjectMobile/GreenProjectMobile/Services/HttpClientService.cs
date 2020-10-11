@@ -4,7 +4,6 @@ using System.Text;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using Xamarin.Essentials;
-using Java.Nio.Channels;
 
 namespace GreenProjectMobile.Services
 {

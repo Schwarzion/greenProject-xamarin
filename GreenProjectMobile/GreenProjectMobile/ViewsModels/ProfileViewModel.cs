@@ -1,4 +1,6 @@
 ﻿using GreenProjectMobile.Models.ProfileModels;
+using GreenProjectMobile.Services;
+using GreenProjectMobile.Views;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -11,6 +13,7 @@ using System.Net.Http.Headers;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 
@@ -19,10 +22,12 @@ namespace GreenProjectMobile.ViewsModels
     public class ProfileViewModel : INotifyPropertyChanged
     {
         readonly HttpClient client;
+        public ICommand SubmitCommand { protected set; get; }
 
         public ProfileViewModel()
         {
-            client = new HttpClient();
+            client = HttpClientService.client;
+            SubmitCommand = new Command(UpdateProfile);
             getProfile();
         }
 
@@ -121,6 +126,10 @@ namespace GreenProjectMobile.ViewsModels
                 Sexe = "A";
             }
         }
+        public void UpdateProfile()
+        {
+            Application.Current.MainPage.Navigation.PushModalAsync(new NavigationPage(new UpdateView(Profile)));
+        }
 
 
 
@@ -128,13 +137,11 @@ namespace GreenProjectMobile.ViewsModels
 
         public async void getProfile()
         {
-            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", await SecureStorage.GetAsync("Token"));
-            string uri = Constants.Constants.BaseUrl + "profile";
             HttpResponseMessage response = null;
 
             try
             {
-                response = await client.GetAsync(uri);
+                response = await client.GetAsync("profile");
                 if (response != null && response.IsSuccessStatusCode == true)
                 {
                     var contents = response.Content.ReadAsStringAsync().Result;
