@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Diagnostics;
+using System.Linq;
 using System.Net.Http;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -36,7 +37,7 @@ namespace GreenProjectMobile.ViewsModels
             if (response != null && response.IsSuccessStatusCode == true)
             {
                 var contents = response.Content.ReadAsStringAsync().Result;
-                GetUserquests();
+                userQuestList.Remove(userQuestList.Where(i => i.id == id).Single());
             }
         }
 
@@ -47,7 +48,7 @@ namespace GreenProjectMobile.ViewsModels
             if (response != null && response.IsSuccessStatusCode == true)
             {
                 var contents = response.Content.ReadAsStringAsync().Result;
-                GetUserquests();
+                userQuestList.Remove(userQuestList.Where(i => i.id == id).Single());
             }
         }
 
