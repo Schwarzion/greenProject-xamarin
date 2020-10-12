@@ -36,14 +36,19 @@ namespace GreenProjectMobile.ViewsModels
             if (response != null && response.IsSuccessStatusCode == true)
             {
                 var contents = response.Content.ReadAsStringAsync().Result;
-                Debug.WriteLine(contents);
                 GetUserquests();
             }
         }
 
-        public void OnValidate(int id)
+        public async void OnValidate(int id)
         {
-            Console.WriteLine(id);
+            string url = "validateQuest" + "/" + id;
+            HttpResponseMessage response = await client.GetAsync(url);
+            if (response != null && response.IsSuccessStatusCode == true)
+            {
+                var contents = response.Content.ReadAsStringAsync().Result;
+                GetUserquests();
+            }
         }
 
         public Tip Tips { get; private set; }
